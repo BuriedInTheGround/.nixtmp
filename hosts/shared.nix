@@ -3,6 +3,9 @@
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # We enable redistributable firmware for better hardware compatibility.
+  hardware.enableRedistributableFirmware = true;
+
   nix = {
     # We always want to use the latest version of Nix so that we have access to
     # the latest updates for the experimental features.
