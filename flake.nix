@@ -31,7 +31,10 @@
 
     nixosConfigurations.kokoromi = mkSystem "kokoromi" {
       inherit nixpkgs home-manager revision overlays;
-      system = "x86_64-linux"; # TODO: ??
+      extraModules = [
+        inputs.nixos-hardware.nixosModules.common-gpu-intel
+      ];
+      system = "x86_64-linux";
       user = "simone";
     };
   };
