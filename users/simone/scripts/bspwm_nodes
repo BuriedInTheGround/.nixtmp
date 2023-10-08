@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+nodesStr=$(bspc query --nodes)
+readarray -t nodes <<<"$nodesStr"
+
+if [[ "${#nodes[@]}" -eq 0 ]]; then
+    echo "No nodes"
+    exit 0
+fi
+
+echo "┌──────────────────────┬─────────┐"
+echo "│ CLASS NAME           │ DESKTOP │"
+echo "├──────────────────────┼─────────┤"
+for node in "${nodes[@]}"; do
+    bNodeName=$(bspc query --node "$node" --tree | jq --raw-output ".client.className")
+    bNodeDesktop=$(bspc query --node "$node" --desktops --names)
+    printf "│ %-20s │ %-7s │\n" "$bNodeName" "$bNodeDesktop"
+    if [[ "$node" != "${nodes[-1]}" ]]; then
+        echo "├──────────────────────┼─────────┤"
+    fi
+done
+echo "└──────────────────────┴─────────┘"

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#   first group                               third group  fifth group
+#   (filename)                                 (line nr)   (column nr)
+#       |                                           |         |
+#       V                                           V         V
+REGEX='/(([0-9A-Za-z._\/]|[^\x00-\x7f]){1}[^ :\n]*):([0-9]+)(:([0-9]+))?/'
+
+FILENAME=$(perl -n -e "$REGEX && print \$1" <<<"$1")
+LINE=$(perl -n -e "$REGEX && print \$3" <<<"$1")
+COLUMN=$(perl -n -e "$REGEX && print \$5" <<<"$1")
+
+if [[ -z "$LINE" ]]; then
+    LINE='0'
+fi
+
+if [[ -z "$COLUMN" ]]; then
+    COLUMN='0'
+fi
+
+alacritty msg create-window -e vim -c "call cursor($LINE,$COLUMN)" "$FILENAME"
