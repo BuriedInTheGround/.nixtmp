@@ -22,7 +22,7 @@
     pkgs.mission-center # TODO: Remove after GTK theming.
     pkgs.mpc-cli
     pkgs.neovim # TODO: Configure.
-    # TODO: pkgs.onlyoffice-bin_latest
+    pkgs.onlyoffice-bin_latest
     pkgs.pavucontrol
     pkgs.pfetch-rs
     pkgs.telegram-desktop
