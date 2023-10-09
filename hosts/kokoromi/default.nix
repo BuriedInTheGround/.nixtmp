@@ -32,4 +32,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  # See hosts/shared.nix.
+  system.stateVersion = "23.05"; # Did you read the comment?
 }
