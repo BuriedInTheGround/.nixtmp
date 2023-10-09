@@ -33,6 +33,8 @@
     pulse.enable = true;
   };
 
+  services.xserver.libinput.touchpad.naturalScrolling = true;
+
   # See hosts/shared.nix.
   system.stateVersion = "23.05"; # Did you read the comment?
 }
