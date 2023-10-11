@@ -379,10 +379,10 @@
         format.low.prefix.foreground = "\${colors.primary}";
         format.low.text = "<label-low>";
 
-        label.charging = "%{F#75b5aa}%percentage%%";
-        label.discharging = "%percentage%%";
+        label.charging = "%{F#75b5aa}%percentage%% (%time%)";
+        label.discharging = "%percentage%% (%time%)";
         label.full = "FULL";
-        label.low = "%{F#ac4242}%percentage%%";
+        label.low = "%{F#ac4242}%percentage%% (%time%)";
       };
       "module/xkeyboard" = {
         type = "internal/xkeyboard";
