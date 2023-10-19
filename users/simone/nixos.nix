@@ -1,4 +1,4 @@
-{ config, pkgs, currentUser, ... }:
+{ config, lib, pkgs, currentSystemName, currentUser, ... }:
 
 {
   programs.zsh = {
@@ -20,6 +20,17 @@
 
   # We enable the geolocation service for Redshift to work properly.
   services.geoclue2.enable = true;
+
+  services.keyd = lib.mkIf (currentSystemName == "kokoromi") {
+    enable = true;
+    keyboards.default = {
+      ids = [ "*" ];
+      settings.main = {
+        # Remap KP_Enter to Return.
+        kpenter = "enter";
+      };
+    };
+  };
 
   fonts = {
     enableDefaultPackages = true;
