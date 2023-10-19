@@ -33,6 +33,7 @@
     pulse.enable = true;
   };
 
+  # We enable natural scrolling for the touchpad.
   services.xserver.libinput.touchpad.naturalScrolling = true;
 
   # We use power management to extend battery life.
@@ -45,6 +46,9 @@
       CPU_BOOST_ON_BAT = 0;
     };
   };
+
+  # We want to prevent accidental shutdowns.
+  services.logind.powerKey = "ignore";
 
   # We enable temperature management to prevent the CPU from overheating.
   # This can also help with battery life.
