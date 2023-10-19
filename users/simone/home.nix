@@ -60,6 +60,7 @@
     "pf"      = "PF_ASCII=linux PF_COL1=6 PF_COL2=3 PF_COL3=1 PF_INFO='ascii title os kernel uptime pkgs shell memory' pfetch";
   };
 
+  xdg.enable = true;
   xdg.userDirs.enable = true;
 
   # TODO: Finish theme configuration.
