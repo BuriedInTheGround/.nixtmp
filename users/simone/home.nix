@@ -272,12 +272,20 @@
   };
   xdg.configFile."rofi/themes/slim.rasi".text = (import ./rofi-theme.nix) { };
 
+  programs.zathura = {
+    enable = true;
+    options = {
+      default-fg = "#4d4d4c";
+      default-bg = "#f5f3f1";
+      selection-clipboard = "clipboard";
+    };
+  };
+
   programs = {
     feh.enable = true;
     jq.enable = true;
     mpv.enable = true;
     ripgrep.enable = true;
-    zathura.enable = true;
   };
 
   services.polybar = {
