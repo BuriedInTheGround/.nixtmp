@@ -35,6 +35,21 @@
 
   services.xserver.libinput.touchpad.naturalScrolling = true;
 
+  # We use power management to extend battery life.
+  powerManagement.powertop.enable = true;
+  powerManagement.cpuFreqGovernor = "schedutil";
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+    };
+  };
+
+  # We enable temperature management to prevent the CPU from overheating.
+  # This can also help with battery life.
+  services.thermald.enable = true;
+
   # See hosts/shared.nix.
   system.stateVersion = "23.05"; # Did you read the comment?
 }
