@@ -537,7 +537,7 @@
         "super + {_,shift + }n" = "polybar-msg cmd {hide && bspc config bottom_padding 0,show}";
         "super + q" = "rofi -show calc -modi calc -no-show-match -no-sort";
         "super + x" = "betterlockscreen --lock dim";
-        "Print" = "flameshot gui";
+        "{_,shift + }Print" = "flameshot {gui,screen}";
       };
     };
 
