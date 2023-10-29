@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+IFS='' read -r -d '' usage <<"EOF"
+Usage:
+    nixos-theme (dark|light)
+
+Changes the system theme to dark or light mode. This is done with the
+nixos-rebuild test command. Thus, no new boot entry is created.
+EOF
+
+if [[ "$*" =~ (^--help | --help |--help$|^-h | -h |-h$) ]]; then
+    printf '%s' "$usage"
+    exit 0
+fi
+
+if [[ $# -eq 0 ]]; then
+    echo "$(basename "$0"): error: missing ambience"
+    printf '%s' "$usage"
+    exit 1
+fi
+if [[ $# -gt 1 ]]; then
+    echo "$(basename "$0"): error: too many arguments"
+    printf '%s' "$usage"
+    exit 1
+fi
+
+if [[ "$1" != "dark" && "$1" != "light" ]]; then
+    echo "$(basename "$0"): error: invalid ambience value"
+    printf '%s' "$usage"
+    exit 1
+fi
+theme="$1"
+
+path="$XDG_CONFIG_HOME/nixos-config/users/simone/home.nix"
+
+matching=$(grep -E -c 'theme = "(dark|light)"' "$path" 2> /dev/null)
+if [[ matching -ne 1 ]]; then
+    echo "$(basename "$0"): error: none or too many replacement points found"
+    echo "$(basename "$0"): hint: does the file \"$path\" exists?"
+    exit 1
+fi
+
+sed -i -E -e "s/theme = \"(dark|light)\"/theme = \"$theme\"/" "$path" 2> /dev/null
+
+nixos-rebuild test --fast --use-remote-sudo
