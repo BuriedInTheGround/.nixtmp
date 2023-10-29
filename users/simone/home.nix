@@ -751,8 +751,10 @@
 
         " Do not run Tridactyl on some web sites.
         autocmd DocStart app.standardnotes.com mode ignore
+        autocmd DocStart excalidraw.com mode ignore
         autocmd DocStart mail.google.com mode ignore
         autocmd DocStart www.netflix.com mode ignore
+        autocmd DocStart www.youtube.com mode ignore
 
         set completionfuzziness 0.2
         set hintfiltermode vimperator-reflow
