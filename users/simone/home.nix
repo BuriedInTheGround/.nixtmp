@@ -214,8 +214,8 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "greyscale";
-      theme_background = true;
+      color_theme = "TTY";
+      theme_background = false;
       truecolor = true;
       vim_keys = true;
       update_ms = 1000;
