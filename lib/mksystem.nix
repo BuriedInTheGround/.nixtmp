@@ -21,7 +21,7 @@ nixpkgs.lib.nixosSystem {
       # We expose some extra arguments so that our modules can better
       # parameterize based on these values.
       _module.args = {
-        currentSystemName = name;
+        currentHost = name;
         currentUser = user;
       };
 

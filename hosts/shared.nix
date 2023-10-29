@@ -1,4 +1,4 @@
-{ config, lib, pkgs, currentSystemName, currentUser, ... }:
+{ config, lib, pkgs, currentHost, currentUser, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -26,7 +26,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "${currentSystemName}"; # Define your hostname.
+  networking.hostName = "${currentHost}"; # Define your hostname.
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
