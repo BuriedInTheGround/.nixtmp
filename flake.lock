@@ -67,12 +67,28 @@
         "type": "github"
       }
     },
+    "perpetua": {
+      "locked": {
+        "lastModified": 1693916572,
+        "narHash": "sha256-AJj0jKA38zXCpkg+kpZ7IaABZhFLpMs/FX5MAEWQ+90=",
+        "owner": "perpetuatheme",
+        "repo": "nix",
+        "rev": "850fde0668b6f8d6dbdf0186b3c8eeadad04673e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "perpetuatheme",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nur": "nur",
+        "perpetua": "perpetua"
       }
     }
   },

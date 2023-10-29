@@ -12,6 +12,8 @@
     };
 
     nur.url = "github:nix-community/NUR";
+
+    perpetua.url = "github:perpetuatheme/nix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
@@ -19,9 +21,12 @@
     mkSystem = import ./lib/mksystem.nix;
     revision = self.rev or self.dirtyRev or "dirty";
     overlays = [ inputs.nur.overlay ];
+    lib = nixpkgs.lib.extend (self: super: {
+      perpetua = inputs.perpetua.lib;
+    });
   in {
     nixosConfigurations.tameshi = mkSystem "tameshi" {
-      inherit nixpkgs home-manager revision overlays;
+      inherit lib home-manager revision overlays;
       extraModules = [
         inputs.nixos-hardware.nixosModules.common-gpu-amd-southern-islands
       ];
@@ -30,7 +35,7 @@
     };
 
     nixosConfigurations.kokoromi = mkSystem "kokoromi" {
-      inherit nixpkgs home-manager revision overlays;
+      inherit lib home-manager revision overlays;
       extraModules = [
         inputs.nixos-hardware.nixosModules.common-gpu-intel
       ];

@@ -1,7 +1,8 @@
 # This function creates a NixOS system.
-name: { nixpkgs, home-manager, revision, overlays, extraModules, system, user }:
+name: { lib, home-manager, revision, overlays, extraModules, system, user }:
 
-nixpkgs.lib.nixosSystem {
+lib.nixosSystem {
+  inherit lib;
   inherit system;
 
   modules = [
