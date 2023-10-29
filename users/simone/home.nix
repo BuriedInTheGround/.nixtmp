@@ -1,6 +1,10 @@
 { config, lib, pkgs, currentUser, ... }:
 
-{
+let
+  theme = "dark";
+
+  perpetua = builtins.mapAttrs (_: p: p.hex) lib.perpetua.${theme};
+in {
   imports = [
     ../../modules/hm
   ];
@@ -19,7 +23,6 @@
     # TODO: pkgs.gimp
     # TODO: pkgs.inkscape
     pkgs.logseq
-    pkgs.mission-center # TODO: Remove after GTK theming.
     pkgs.mpc-cli
     pkgs.neovim # TODO: Configure.
     pkgs.onlyoffice-bin_latest
@@ -63,10 +66,9 @@
   xdg.enable = true;
   xdg.userDirs.enable = true;
 
-  # TODO: Finish theme configuration.
   gtk = let
     extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+      gtk-application-prefer-dark-theme = (theme != "light");
     };
   in {
     enable = true;
@@ -77,7 +79,7 @@
   };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+      color-scheme = "prefer-${theme}";
     };
   };
 
@@ -270,13 +272,20 @@
       kb-select-10 = "";
     };
   };
-  xdg.configFile."rofi/themes/slim.rasi".text = (import ./rofi-theme.nix) { };
+  xdg.configFile."rofi/themes/slim.rasi".text = (import ./rofi-theme.nix) {
+    background = perpetua.base0;
+    background-alt = perpetua.base2;
+    foreground = perpetua.text0;
+    selected = perpetua.yellow;
+    active = perpetua.cyan;
+    urgent = perpetua.red;
+  };
 
   programs.zathura = {
     enable = true;
     options = {
-      default-fg = "#4d4d4c";
-      default-bg = "#f5f3f1";
+      default-fg = perpetua.text0;
+      default-bg = perpetua.base0;
       selection-clipboard = "clipboard";
     };
   };
@@ -302,13 +311,13 @@
     '';
     settings = {
       "colors" = {
-        background = "#0f0f0f"; # dim black
-        background-alt = "#181818"; # black
-        foreground = "#d8d8d8"; # white
-        primary = "#f4bf75"; # yellow
-        secondary = "#75b5aa"; #cyan
-        alert = "#ac4242"; # red
-        disabled = "#6b6b6b"; # bright black
+        background = perpetua.base0;
+        background-alt = perpetua.base2;
+        foreground = perpetua.text0;
+        primary = perpetua.yellow;
+        secondary = perpetua.cyan;
+        alert = perpetua.red;
+        disabled = perpetua.over1;
       };
       "bar/bar" = {
         bottom = true;
@@ -363,7 +372,7 @@
 
         mount = [ "/" ];
 
-        label.mounted = "%{F#f4bf75}%mountpoint%%{F-} %percentage_used%%";
+        label.mounted = "%{F${perpetua.yellow}}%mountpoint%%{F-} %percentage_used%%";
 
         label.unmounted.text = "%mountpoint% not mounted";
         label.unmounted.foreground = "\${colors.disabled}";
@@ -388,10 +397,10 @@
         format.low.prefix.foreground = "\${colors.primary}";
         format.low.text = "<label-low>";
 
-        label.charging = "%{F#75b5aa}%percentage%% (%time%)";
+        label.charging = "%{F${perpetua.cyan}}%percentage%% (%time%)";
         label.discharging = "%percentage%% (%time%)";
         label.full = "FULL";
-        label.low = "%{F#ac4242}%percentage%% (%time%)";
+        label.low = "%{F${perpetua.red}}%percentage%% (%time%)";
       };
       "module/xkeyboard" = {
         type = "internal/xkeyboard";
@@ -423,17 +432,17 @@
         interval = 2;
         format.connected = "<label-connected>";
         format.disconnected = "<label-disconnected>";
-        label.disconnected = "%{F#f4bf75}%ifname%%{F#6b6b6b} disconnected";
+        label.disconnected = "%{F${perpetua.yellow}}%ifname%%{F${perpetua.over1}} disconnected";
       };
       "module/wlan" = {
         "inherit" = "network-base";
         interface.type = "wireless";
-        label.connected = "%{F#f4bf75}%ifname%%{F-} %essid% %local_ip% (%downspeed%)";
+        label.connected = "%{F${perpetua.yellow}}%ifname%%{F-} %essid% %local_ip% (%downspeed%)";
       };
       "module/eth" = {
         "inherit" = "network-base";
         interface.type = "wired";
-        label.connected = "%{F#f4bf75}%ifname%%{F-} %local_ip% (%downspeed%)";
+        label.connected = "%{F${perpetua.yellow}}%ifname%%{F-} %local_ip% (%downspeed%)";
       };
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
@@ -508,7 +517,80 @@
   garden = {
     alacritty = {
       enable = true;
-      import = [ "${config.xdg.configHome}/alacritty/theme.yml" ];
+      colors = {
+        primary = {
+          foreground = "${perpetua.text0}";
+          background = "${perpetua.base0}";
+          dim_foreground = "${perpetua.text0}";
+          bright_foreground = "${perpetua.text0}";
+        };
+        cursor = {
+          text = "${perpetua.base0}";
+          cursor = "${perpetua.text0}";
+        };
+        vi_mode_cursor = {
+          text = "${perpetua.base0}";
+          cursor = "${perpetua.violet}";
+        };
+        search = {
+          matches = {
+            foreground = "${perpetua.text0}";
+            background = "${perpetua.yellow_back}";
+          };
+          focused_match = {
+            foreground = "${perpetua.text0}";
+            background = "${perpetua.turquoise_back}";
+          };
+        };
+        hints = {
+          start = {
+            foreground = "${perpetua.base0}";
+            background = "${perpetua.yellow}";
+          };
+          end = {
+            foreground = "${perpetua.base0}";
+            background = "${perpetua.text2}";
+          };
+        };
+        footer_bar = {
+          foreground = "${perpetua.base0}";
+          background = "${perpetua.text0}";
+        };
+        selection = {
+          text = "${perpetua.text0}";
+          background = "${perpetua.base4}";
+        };
+        normal = {
+          black = "${perpetua.base2}";
+          red = "${perpetua.red}";
+          green = "${perpetua.green}";
+          yellow = "${perpetua.yellow}";
+          blue = "${perpetua.blue}";
+          magenta = "${perpetua.pink}";
+          cyan = "${perpetua.cyan}";
+          white = "${perpetua.text0}";
+        };
+        bright = {
+          black = "${perpetua.base4}";
+          red = "${perpetua.red}";
+          green = "${perpetua.green}";
+          yellow = "${perpetua.yellow}";
+          blue = "${perpetua.blue}";
+          magenta = "${perpetua.pink}";
+          cyan = "${perpetua.cyan}";
+          white = "${perpetua.text0}";
+        };
+        dim = {
+          black = "${perpetua.base2}";
+          red = "${perpetua.red}";
+          green = "${perpetua.green}";
+          yellow = "${perpetua.yellow}";
+          blue = "${perpetua.blue}";
+          magenta = "${perpetua.pink}";
+          cyan = "${perpetua.cyan}";
+          white = "${perpetua.text0}";
+        };
+      };
       extraHints = [
         {
           regex = "(([0-9A-Za-z._\/]|[^\x00-\x7f]){1}[^ :\n]*):([0-9]+)(:([0-9]+))?";
@@ -530,7 +612,7 @@
         };
       };
       startupPrograms = [
-        "feh --no-fehbg --bg-fill ${config.xdg.userDirs.pictures}/wallpaper.png"
+        "feh --no-fehbg --bg-fill ${config.xdg.userDirs.pictures}/wallpaper-${theme}.png"
       ];
       extraKeybindings = {
         "super + @space" = "rofi -show drun -disable-history -sort -sorting-method fzf";
@@ -766,12 +848,15 @@
     };
   };
 
+  home.file."Pictures" = {
+    source = ./wallpapers;
+    recursive = true;
+  };
+
   home.file."Scripts" = {
     source = ./scripts;
     recursive = true;
   };
-
-  home.file."Pictures/wallpaper.png".source = ./gsgfez0h0p481.png;
 
   xdg.configFile."cava/config".text = ''
     [output]
@@ -781,14 +866,14 @@
     [color]
     gradient = 1
     gradient_count = 8
-    gradient_color_1 = '#59cc33'
-    gradient_color_2 = '#80cc33'
-    gradient_color_3 = '#a6cc33'
-    gradient_color_4 = '#cccc33'
-    gradient_color_5 = '#cca633'
-    gradient_color_6 = '#cc8033'
-    gradient_color_7 = '#cc5933'
-    gradient_color_8 = '#cc3333'
+    gradient_color_1 = '${perpetua.turquoise}'
+    gradient_color_2 = '${perpetua.green}'
+    gradient_color_3 = '${perpetua.lime}'
+    gradient_color_4 = '${perpetua.yellow}'
+    gradient_color_5 = '${perpetua.orange}'
+    gradient_color_6 = '${perpetua.red}'
+    gradient_color_7 = '${perpetua.pink}'
+    gradient_color_8 = '${perpetua.lavender}'
 
     [smoothing]
     noise_reduction = 66
