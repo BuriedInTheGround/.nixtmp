@@ -365,7 +365,10 @@ in {
 
         label.empty = "";
       };
-      "module/xwindow".type = "internal/xwindow";
+      "module/xwindow" = {
+        type = "internal/xwindow";
+        label-maxlen = 30;
+      };
       "module/filesystem" = {
         type = "internal/fs";
         interval = 20;
