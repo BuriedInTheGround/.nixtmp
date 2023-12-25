@@ -65,6 +65,7 @@
     parted
     pciutils
     psmisc
+    unzip
     vim
     wget2
     xclip
