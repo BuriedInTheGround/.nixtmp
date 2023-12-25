@@ -19,3 +19,24 @@ flake.lock
 
 
 https://tree.nathanfriend.io
+
+Commit messages:
+<context>: <summary of changes using verb tense and no trailing period>
+
+Contexts:
+- <health_file>: affects the specified health file (README, LICENSE, CONTRIBUTING, etc.)
+
+- flake: affects flake-related things, main changes are in flake.nix or flake.lock
+
+- all: affects one or more hosts, one or more users, and possibly the lib
+
+- lib: affects one or more functions of the lib
+- <lib_function_name>: affects the specified lib function
+
+- modules: affects one or more modules
+- <module_name>: affects the specified module
+
+- shared: affects the configuration shared by all hosts
+- <hostname>: affects the specified host
+
+- <username>: affects the specified user
