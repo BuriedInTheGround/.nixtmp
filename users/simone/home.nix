@@ -732,7 +732,7 @@ in {
         {
           name = "Nix";
           bookmarks = [
-            { name = "Home Manager Configuration Options"; url = "https://nix-community.github.io/home-manager/options.html"; }
+            { name = "Home Manager Configuration Options"; url = "https://nix-community.github.io/home-manager/options.xhtml"; }
             { name = "Nix Package Versions"; url = "https://lazamar.co.uk/nix-versions/"; }
             { name = "nix-community/home-manager"; url = "https://github.com/nix-community/home-manager"; }
             { name = "NixOS Wiki"; url = "https://nixos.wiki/wiki/Main_Page"; }
