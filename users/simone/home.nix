@@ -16,6 +16,7 @@ in {
 
   home.packages = [
     pkgs.age
+    pkgs.anki-bin
     pkgs.bunnyfetch
     pkgs.cava
     pkgs.fd
