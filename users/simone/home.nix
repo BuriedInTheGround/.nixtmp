@@ -815,7 +815,7 @@ in {
         smart-referer
         ublock-origin
       ];
-      homepage = "data:,";
+      homepage = "about:blank";
       preferredSearchEngine = "DuckDuckGo";
       tridactyl.enable = true;
       tridactyl.extraConfig = ''
@@ -846,7 +846,7 @@ in {
         set hintfiltermode vimperator-reflow
         set hintnames numeric
         set modeindicatorshowkeys true
-        set newtab data:,
+        set newtab about:blank
         set smoothscroll true
       '';
     };
