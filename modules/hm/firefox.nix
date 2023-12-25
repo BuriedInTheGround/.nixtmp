@@ -246,7 +246,7 @@ in {
     programs.firefox = {
       enable = true;
       package = pkgs.firefox.override {
-        cfg.enableTridactylNative = cfg.supportTridactyl;
+        nativeMessagingHosts = optional cfg.supportTridactyl pkgs.tridactyl-native;
         extraPolicies = {
           CaptivePortal = false;
           Containers.Default = cfg.containers;

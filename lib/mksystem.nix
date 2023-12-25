@@ -29,6 +29,12 @@ lib.nixosSystem {
       # Apply our overlays.
       nixpkgs.overlays = overlays;
 
+      # FIXME: this is needed for Logseq and must be removed when no longer
+      # necessary.
+      nixpkgs.config.permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+
       # Bake the git revision of the repository into the system.
       system.configurationRevision = revision;
     })
