@@ -42,4 +42,6 @@ fi
 
 sed -i -E -e "s/theme = \"(dark|light)\"/theme = \"$theme\"/" "$path" 2> /dev/null
 
-nixos-rebuild test --fast --use-remote-sudo
+nixos-rebuild test --fast --use-remote-sudo || exit 1
+bspc wm --restart || exit 1
+polybar-msg cmd restart || exit 1
