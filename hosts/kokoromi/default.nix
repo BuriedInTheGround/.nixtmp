@@ -52,7 +52,17 @@
 
   # We enable temperature management to prevent the CPU from overheating.
   # This can also help with battery life.
-  services.thermald.enable = true;
+  services.thermald = {
+    enable = true;
+    package = pkgs.thermald.overrideAttrs (old: {
+      patches = (old.patches or [ ]) ++ [
+        (pkgs.fetchurl {
+          url = "https://patch-diff.githubusercontent.com/raw/intel/thermal_daemon/pull/422.patch";
+          hash = "sha256-GQFMgVA+cLEQ/zsjq9Zj8ifk+6k2aHSLqx9BAyxMG/c=";
+        })
+      ];
+    });
+  };
 
   # See hosts/shared.nix.
   system.stateVersion = "23.05"; # Did you read the comment?
