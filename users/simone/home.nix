@@ -840,6 +840,7 @@ in {
         autocmd DocStart excalidraw.com mode ignore
         autocmd DocStart mail.google.com mode ignore
         autocmd DocStart www.netflix.com mode ignore
+        autocmd DocStart web.whatsapp.com mode ignore
         autocmd DocStart www.youtube.com mode ignore
 
         set completionfuzziness 0.2
