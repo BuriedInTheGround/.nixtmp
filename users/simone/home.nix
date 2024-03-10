@@ -694,6 +694,7 @@ in {
             { name = "NixOS"; url = "https://nixos.org/"; }
             { name = "NUR"; url = "https://nur.nix-community.org/"; }
             { name = "Translate"; url = "https://translate.google.com/"; }
+            { name = "Treccani"; url = "https://www.treccani.it/"; }
             { name = "Twitch"; url = "https://www.twitch.com/"; }
             { name = "Twitter"; url = "https://twitter.com/"; }
             { name = "Uniweb"; url = "https://uniweb.unipd.it/"; }
@@ -759,6 +760,7 @@ in {
             { name = "Fontsource"; url = "https://fontsource.org/"; }
             { name = "Google Fonts"; url = "https://fonts.google.com/"; }
             { name = "google webfonts helper"; url = "https://gwfh.mranftl.com/fonts"; }
+            { name = "Title Case Converter"; url = "https://titlecaseconverter.com/"; }
           ];
         }
         {
@@ -783,16 +785,19 @@ in {
           bookmarks = [
             { name = "Amazon.it"; url = "https://www.amazon.it/"; }
             { name = "C data types - Wikipedia"; url = "https://en.wikipedia.org/wiki/C_data_types"; }
+            { name = "Command Line Interface Guidelines"; url = "https://clig.dev/"; }
             { name = "Coursera"; url = "https://www.coursera.org/"; }
             { name = "decodeunicode"; url = "https://decodeunicode.org/"; }
             { name = "Devhints"; url = "https://devhints.io/"; }
             { name = "Excalidraw"; url = "https://excalidraw.com/"; }
+            { name = "Excalidraw STEM"; url = "https://math.preview.excalidraw.com/"; }
             { name = "fstab - Wikipedia"; url = "https://en.wikipedia.org/wiki/Fstab"; }
             { name = "GitLab"; url = "https://gitlab.com/"; }
             { name = "Google Style Guides"; url = "https://google.github.io/styleguide/"; }
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "Internet protocol suite - Wikipedia"; url = "https://en.wikipedia.org/wiki/Internet_protocol_suite"; }
             { name = "JSON Web Tokens"; url = "https://jwt.io/"; }
+            { name = "latex2png"; url = "https://latex2png.com/"; }
             { name = "LaTeX - Wikibooks"; url = "https://en.wikibooks.org/wiki/LaTeX"; }
             { name = "Manx"; url = "https://vt100.net/manx/"; }
             { name = "MathJax basic tutorial and quick reference"; url = "https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"; }
@@ -801,6 +806,8 @@ in {
             { name = "Simone Ragusa"; url = "https://interrato.dev/"; }
             { name = "Standard Notes"; url = "https://app.standardnotes.com/"; }
             { name = "SVG Viewer"; url = "https://www.svgviewer.dev/"; }
+            { name = "tldraw"; url = "https://www.tldraw.com/"; }
+            { name = "Typst Documentation"; url = "https://typst.app/docs/"; }
             { name = "Usage message - Wikipedia"; url = "https://en.wikipedia.org/wiki/Usage_message"; }
             { name = "Wolfram|Alpha"; url = "https://www.wolframalpha.com/"; }
           ];
@@ -840,9 +847,11 @@ in {
         autocmd DocStart app.standardnotes.com mode ignore
         autocmd DocStart excalidraw.com mode ignore
         autocmd DocStart mail.google.com mode ignore
-        autocmd DocStart www.netflix.com mode ignore
-        autocmd DocStart www.twitch.tv mode ignore
+        autocmd DocStart math.preview.excalidraw.com mode ignore
         autocmd DocStart web.whatsapp.com mode ignore
+        autocmd DocStart www.netflix.com mode ignore
+        autocmd DocStart www.tldraw.com mode ignore
+        autocmd DocStart www.twitch.tv mode ignore
         autocmd DocStart www.youtube.com mode ignore
 
         set completionfuzziness 0.2
