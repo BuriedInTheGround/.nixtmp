@@ -44,6 +44,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     BAT_THEME = "ansi";
+    DIRENV_LOG_FORMAT = ""; # Make direnv quiet.
     WORDCHARS = "*[]~;!$%^(){}<>";
   };
 
