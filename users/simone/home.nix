@@ -26,6 +26,7 @@ in {
     pkgs.logseq
     pkgs.mpc-cli
     pkgs.neovim # TODO: Configure.
+    pkgs.okular
     pkgs.onlyoffice-bin_latest
     pkgs.pavucontrol
     pkgs.pfetch-rs
