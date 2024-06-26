@@ -1,6 +1,10 @@
 { config, lib, pkgs, currentHost, currentUser, ... }:
 
 {
+  # Start the OpenSSH agent at login. Keys can be added with ssh-add, the agent
+  # will remember the passphrase.
+  programs.ssh.startAgent = true;
+
   programs.zsh = {
     enable = true;
 
