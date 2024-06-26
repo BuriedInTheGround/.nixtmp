@@ -1,4 +1,4 @@
-{ config, lib, pkgs, currentUser, ... }:
+{ config, lib, pkgs, unstable, currentUser, ... }:
 
 let
   theme = "dark";
@@ -25,7 +25,7 @@ in {
     # TODO: pkgs.inkscape
     pkgs.logseq
     pkgs.mpc-cli
-    pkgs.neovim # Related packages below.
+    unstable.neovim # Related packages below.
     pkgs.okular
     pkgs.onlyoffice-bin_latest
     pkgs.pavucontrol

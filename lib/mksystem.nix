@@ -1,5 +1,5 @@
 # This function creates a NixOS system.
-name: { lib, home-manager, revision, overlays, extraModules, system, user }:
+name: { lib, nixpkgs-unstable, home-manager, revision, overlays, extraModules, system, user }:
 
 lib.nixosSystem {
   inherit lib;
@@ -10,6 +10,9 @@ lib.nixosSystem {
     ../hosts/shared.nix
     ../users/${user}/nixos.nix
     home-manager.nixosModules.home-manager {
+      home-manager.extraSpecialArgs = {
+        unstable = import nixpkgs-unstable { inherit system overlays; };
+      };
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.${user} = {
@@ -39,4 +42,10 @@ lib.nixosSystem {
       system.configurationRevision = revision;
     })
   ] ++ extraModules;
+
+  specialArgs = {
+    unstable = import nixpkgs-unstable {
+      inherit system overlays;
+    };
+  };
 }

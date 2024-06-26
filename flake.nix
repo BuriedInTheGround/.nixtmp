@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
@@ -13,7 +14,7 @@
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     nur.url = "github:nix-community/NUR";
@@ -21,7 +22,7 @@
     perpetua.url = "github:perpetuatheme/nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... } @ inputs:
   let
     mkSystem = import ./lib/mksystem.nix;
     revision = self.rev or self.dirtyRev or "dirty";
@@ -34,7 +35,7 @@
     });
   in {
     nixosConfigurations.tameshi = mkSystem "tameshi" {
-      inherit lib home-manager revision overlays;
+      inherit lib nixpkgs-unstable home-manager revision overlays;
       extraModules = [
         inputs.nixos-hardware.nixosModules.common-gpu-amd-southern-islands
       ];
@@ -43,7 +44,7 @@
     };
 
     nixosConfigurations.kokoromi = mkSystem "kokoromi" {
-      inherit lib home-manager revision overlays;
+      inherit lib nixpkgs-unstable home-manager revision overlays;
       extraModules = [
         inputs.nixos-hardware.nixosModules.common-gpu-intel
       ];
