@@ -13,6 +13,9 @@ echo "│ CLASS NAME           │ DESKTOP │"
 echo "├──────────────────────┼─────────┤"
 for node in "${nodes[@]}"; do
     bNodeName=$(bspc query --node "$node" --tree | jq --raw-output ".client.className")
+    if [[ "$bNodeName" == "null" ]]; then
+        continue
+    fi
     bNodeDesktop=$(bspc query --node "$node" --desktops --names)
     printf "│ %-20s │ %-7s │\n" "$bNodeName" "$bNodeDesktop"
     if [[ "$node" != "${nodes[-1]}" ]]; then
