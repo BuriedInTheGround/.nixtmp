@@ -693,6 +693,7 @@ in {
             { name = "Netflix"; url = "https://www.netflix.com/"; }
             { name = "NixOS"; url = "https://nixos.org/"; }
             { name = "NUR"; url = "https://nur.nix-community.org/"; }
+            { name = "Syncthing"; url = "http://127.0.0.1:8384/"; }
             { name = "Translate"; url = "https://translate.google.com/"; }
             { name = "Treccani"; url = "https://www.treccani.it/"; }
             { name = "Twitch"; url = "https://www.twitch.com/"; }
