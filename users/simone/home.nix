@@ -424,14 +424,14 @@ in {
         interval = 2;
         format.prefix.text = "RAM ";
         format.prefix.foreground = "\${colors.primary}";
-        label= "%percentage_used:2%%";
+        label = "%percentage_used:2%%";
       };
       "module/cpu" = {
         type = "internal/cpu";
         interval = 2;
         format.prefix.text = "CPU ";
         format.prefix.foreground = "\${colors.primary}";
-        label= "%percentage:2%%";
+        label = "%percentage:2%%";
       };
       "network-base" = {
         type = "internal/network";
@@ -739,7 +739,7 @@ in {
             { name = "Home Manager Configuration Options"; url = "https://nix-community.github.io/home-manager/options.xhtml"; }
             { name = "Nix Package Versions"; url = "https://lazamar.co.uk/nix-versions/"; }
             { name = "nix-community/home-manager"; url = "https://github.com/nix-community/home-manager"; }
-            { name = "NixOS Wiki"; url = "https://nixos.wiki/wiki/Main_Page"; }
+            { name = "NixOS Wiki"; url = "https://wiki.nixos.org/wiki/NixOS_Wiki"; }
             { name = "NixOS/nixos-hardware"; url = "https://github.com/NixOS/nixos-hardware"; }
             { name = "NixOS/nixpkgs"; url = "https://github.com/NixOS/nixpkgs"; }
             { name = "Nixpkgs PR progress tracker"; url = "https://nixpk.gs/pr-tracker.html"; }
@@ -759,10 +759,12 @@ in {
           name = "Typography";
           bookmarks = [
             { name = "Berkeley Graphics"; url = "https://berkeleygraphics.com/"; }
+            { name = "Collletttivo | CLT"; url = "https://www.collletttivo.it/"; }
             { name = "Fontsource"; url = "https://fontsource.org/"; }
             { name = "Google Fonts"; url = "https://fonts.google.com/"; }
             { name = "google webfonts helper"; url = "https://gwfh.mranftl.com/fonts"; }
             { name = "Title Case Converter"; url = "https://titlecaseconverter.com/"; }
+            { name = "zetafonts · the Italian type foundry"; url = "https://www.zetafonts.com/"; }
           ];
         }
         {
