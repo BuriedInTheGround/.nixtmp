@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur.url = "github:nix-community/NUR";
 
     perpetua.url = "github:perpetuatheme/nix";
@@ -20,7 +25,10 @@
   let
     mkSystem = import ./lib/mksystem.nix;
     revision = self.rev or self.dirtyRev or "dirty";
-    overlays = [ inputs.nur.overlay ];
+    overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+      inputs.nur.overlay
+    ];
     lib = nixpkgs.lib.extend (self: super: {
       perpetua = inputs.perpetua.lib;
     });
