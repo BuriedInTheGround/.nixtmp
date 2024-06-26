@@ -44,7 +44,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     BAT_THEME = "ansi";
-    WORDCHARS = "*?[]~&;!$%^(){}<>";
+    WORDCHARS = "*[]~;!$%^(){}<>";
   };
 
   home.shellAliases = {
