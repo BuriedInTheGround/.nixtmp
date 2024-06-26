@@ -72,9 +72,6 @@
     xorg.xev
   ];
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
   # Set up the systemd-resolved DNS resolver.
   services.resolved = {
     enable = true;
