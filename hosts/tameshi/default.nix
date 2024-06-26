@@ -16,7 +16,7 @@
   };
 
   # We want NTFS support.
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = { ntfs = true; };
 
   # We use NetworkManager for networking.
   networking.networkmanager.enable = true;

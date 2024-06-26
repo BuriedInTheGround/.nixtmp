@@ -9,7 +9,7 @@
   nix = {
     # We always want to use the latest version of Nix so that we have access to
     # the latest updates for the experimental features.
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
