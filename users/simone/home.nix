@@ -25,7 +25,7 @@ in {
     # TODO: pkgs.inkscape
     pkgs.logseq
     pkgs.mpc-cli
-    pkgs.neovim # TODO: Configure.
+    pkgs.neovim # Related packages below.
     pkgs.okular
     pkgs.onlyoffice-bin_latest
     pkgs.pavucontrol
@@ -35,6 +35,32 @@ in {
     (pkgs.parallel-full.override {
       willCite = true;
     })
+
+    # LSPs
+    pkgs.asm-lsp
+    pkgs.nodePackages.bash-language-server
+    pkgs.clang-tools
+    pkgs.gopls
+    pkgs.lua-language-server
+    pkgs.ltex-ls
+    pkgs.marksman
+    pkgs.nil
+    pkgs.python311Packages.python-lsp-server
+    pkgs.tailwindcss-language-server
+    pkgs.typst-lsp
+    pkgs.vscode-langservers-extracted
+    pkgs.yaml-language-server
+
+    # Formatters
+    pkgs.nixfmt-rfc-style
+    pkgs.stylua
+    pkgs.typstyle
+
+    # Misc tools
+    pkgs.charm-freeze
+    pkgs.gotools
+    pkgs.nodejs
+    pkgs.tree-sitter
   ];
 
   home.sessionPath = [
