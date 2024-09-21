@@ -8,6 +8,8 @@ in {
   options.garden.alacritty = {
     enable = mkEnableOption "Alacritty";
 
+    transparency = mkEnableOption "terminal transparency";
+
     import = mkOption {
       type = types.listOf types.str;
       default = [ ];
@@ -34,6 +36,7 @@ in {
         import = mkIf (cfg.import != [ ]) cfg.import;
         env.TERM = "alacritty";
         window.dynamic_padding = true;
+        window.opacity = mkIf cfg.transparency 0.95;
         cursor.style.blinking = "On";
         colors = mkIf (cfg.colors != null) cfg.colors;
         hints.enabled = [
@@ -52,23 +55,6 @@ in {
             binding = { key = "H"; mods = "Control|Shift"; };
           }
         ] ++ cfg.extraHints;
-        key_bindings = [
-          # Ctrl-modified direct UTF-8 numbers.
-          #
-          # See https://www.leonerd.org.uk/hacks/fixterms/ for codes.
-          #
-          # Note that we cannot use caret notation or the octal value for
-          # the ESC character because Alacritty does not support it.
-          { key = "Key1"; mods = "Control"; chars = "\\x1b[49;5u"; }
-          { key = "Key2"; mods = "Control"; chars = "\\x1b[50;5u"; }
-          { key = "Key3"; mods = "Control"; chars = "\\x1b[51;5u"; }
-          { key = "Key4"; mods = "Control"; chars = "\\x1b[52;5u"; }
-          { key = "Key5"; mods = "Control"; chars = "\\x1b[53;5u"; }
-          { key = "Key6"; mods = "Control"; chars = "\\x1b[54;5u"; }
-          { key = "Key7"; mods = "Control"; chars = "\\x1b[55;5u"; }
-          { key = "Key8"; mods = "Control"; chars = "\\x1b[56;5u"; }
-          { key = "Key9"; mods = "Control"; chars = "\\x1b[57;5u"; }
-        ];
       };
     };
   };

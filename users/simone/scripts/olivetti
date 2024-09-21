@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+width=${MANWIDTH:-80} # Content width size.
+indent=$(( ( $(tput cols || echo ${COLUMNS:-80}) - width ) / 2 )) # Left indentation size.
+indent_line=$(printf "%${indent}s")
+sed "s/^/${indent_line}/" -

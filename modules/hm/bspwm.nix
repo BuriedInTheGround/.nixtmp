@@ -159,13 +159,15 @@ in {
   options.garden.bspwm = {
     enable = mkEnableOption "bspwm";
 
-    terminalEmulator = mkOption {
-      type = types.str;
-      default = "alacritty";
-      description = ''
-        Preferred terminal emulator to launch with the `super + Escape` hotkey.
+    extraKeybindings = mkOption {
+      type = types.attrsOf (types.nullOr (types.oneOf [ types.str types.path ]));
+      default = { };
+      description = "Extra hotkeys added to the sxhkd configuration file.";
+      example = literalExpression ''
+        {
+          "alt + shift + x" = "betterlockscreen -l dim";
+        }
       '';
-      example = "urxvt";
     };
 
     extraSettings = mkOption {
@@ -205,15 +207,13 @@ in {
       example = [ "numlockx on" "tilda" ];
     };
 
-    extraKeybindings = mkOption {
-      type = types.attrsOf (types.nullOr (types.oneOf [ types.str types.path ]));
-      default = { };
-      description = "Extra hotkeys added to the sxhkd configuration file.";
-      example = literalExpression ''
-        {
-          "alt + shift + x" = "betterlockscreen -l dim";
-        }
+    terminalEmulator = mkOption {
+      type = types.str;
+      default = "alacritty";
+      description = ''
+        Preferred terminal emulator to launch with the `super + Escape` hotkey.
       '';
+      example = "urxvt";
     };
   };
 
@@ -225,11 +225,11 @@ in {
         "primary" = [ "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" ];
       };
       settings = recursiveUpdate {
-        border_width = 2;
-        window_gap = 10;
         split_ratio = 0.5;
         borderless_monocle = true;
         gapless_monocle = true;
+        window_gap = 10;
+        border_width = 2;
       } cfg.extraSettings;
       rules = cfg.rules;
       startupPrograms = cfg.startupPrograms;
@@ -237,7 +237,8 @@ in {
 
     services.sxhkd = {
       enable = true;
-      keybindings = let
+      keybindings =
+      let
         terminalEmulator = if cfg.terminalEmulator == "alacritty" then
           "alacritty msg create-window || alacritty"
         else

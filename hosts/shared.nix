@@ -1,4 +1,4 @@
-{ config, lib, pkgs, currentHost, currentUser, ... }:
+{ pkgs, currentHost, currentUser, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -10,23 +10,40 @@
     # We always want to use the latest version of Nix so that we have access to
     # the latest updates for the experimental features.
     package = pkgs.nixVersions.latest;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs = true
-      keep-derivations = true
-    '';
 
-    # Save disk space by letting Nix automatically detect files in the store
-    # that have identical content and replace them with hard links to a single
-    # copy.
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = "nix-command flakes";
+      keep-derivations = true;
+      keep-outputs = true;
+      use-xdg-base-directories = true;
+    };
   };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "${currentHost}"; # Define your hostname.
+  networking = {
+    hostName = "${currentHost}"; # Define your hostname.
+
+    # Use Cloudflare DNS.
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+  };
+
+  # Use the systemd-resolved DNS resolver.
+  services.resolved = {
+    enable = true;
+    dnsovertls = "true";
+    dnssec = "false"; # Disabled as advised by upstream systemd.
+    domains = [ "~." ];
+  };
+
+  # Query and manipulate storage devices as non-root.
+  services.udisks2.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -37,20 +54,45 @@
 
   services.xserver = {
     enable = true;
-    layout = "us,it";
-    xkbOptions = "terminate:ctrl_alt_bksp,eurosign:e,grp:alt_space_toggle";
-    xkbVariant = "us";
+    xkb = {
+      layout = "us,it";
+      options = "terminate:ctrl_alt_bksp,eurosign:e,grp:alt_space_toggle";
+      variant = "us";
+    };
 
     # We want to symlink the X server configuration under /etc/X11/xorg.conf
-    # so that localectl list-x11-keymap-layouts and similar commands work.
+    # so that `localectl list-x11-keymap-layouts` and similar commands work.
     exportConfiguration = true;
 
-    displayManager = {
-      defaultSession = "none+bspwm";
-      lightdm = {
+    displayManager.lightdm = {
+      enable = true;
+      # Declutter users' home directories.
+      extraConfig = ''
+        user-authority-in-system-dir = true
+      '';
+      greeters.mini = {
         enable = true;
-        greeters.mini.enable = true;
-        greeters.mini.user = "${currentUser}";
+        user = "${currentUser}";
+        extraConfig = ''
+          [greeter]
+          show-password-label = false
+          password-alignment = left
+          password-input-width = 20
+          [greeter-theme]
+          font = "Mono"
+          font-size = 20px
+          text-color = "#ffffff"
+          error-color = "#ffffff"
+          background-image = ""
+          background-color = "#808080"
+          window-color = "#808080"
+          border-color = "#808080"
+          password-character = *
+          password-color = "#ffffff"
+          password-background-color = "#000000"
+          password-border-color = "#dddddd"
+          password-border-radius = 0px
+        '';
       };
     };
 
@@ -58,10 +100,16 @@
     windowManager.bspwm.enable = true;
   };
 
+  services.displayManager.defaultSession = "none+bspwm";
+
   environment.systemPackages = with pkgs; [
     file
+    gcc
     git
     gnumake
+    linux-manual
+    man-pages
+    man-pages-posix
     parted
     pciutils
     psmisc
@@ -72,14 +120,9 @@
     xorg.xev
   ];
 
-  # Set up the systemd-resolved DNS resolver.
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-    extraConfig = ''
-      [Resolve]
-      DNS=1.1.1.1#one.one.one.one 1.0.0.1#one.one.one.one 2606:4700:4700::1111#one.one.one.one 2606:4700:4700::1001#one.one.one.one
-      DNSOverTLS=yes
-    '';
+  documentation = {
+    dev.enable = true;
+    man.generateCaches = true;
+    nixos.includeAllModules = true;
   };
 }

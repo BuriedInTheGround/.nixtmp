@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+# Removes any entries from prefs.js that also exist in user.js.
+# Automatically detects the Firefox profile and prompts the user for confirmation.
+# Backs up the current prefs.js file before making any changes.
+#
+# Adapted from https://github.com/arkenfox/user.js.
+
+function yes_or_no() {
+    while true; do
+        read -rp "$* [y/N]: " yn
+        case "$yn" in
+            [Yy]*) return 0;;
+            [Nn]*) return 1;;
+            "") return 1;; # Default: no
+        esac
+    done
+}
+
+profile_dirname=$(
+    awk '/\[/{prefix=$0; next} $1{print prefix $0}' "${HOME}/.mozilla/firefox/profiles.ini" |
+        grep '\[Profile0\]Path=' |
+        sed -n '/\[Profile0\]Path=/s/\[Profile0\]Path=//p'
+)
+profile_path="${HOME}/.mozilla/firefox/${profile_dirname}"
+
+yes_or_no "Selected Firefox profile at \"${profile_path}\". Continue? " || (
+    echo "$(basename "$0"): info: aborted by user"
+    exit 0
+)
+
+pushd "$profile_path" > /dev/null || (
+    echo "$(basename "$0"): error: cannot get into Firefox profile directory"
+    exit 1
+)
+
+if [[ ! -e user.js ]]; then
+    echo "$(basename "$0"): error: user.js not found in the Firefox profile directory"
+    exit 1
+fi
+
+if [[ ! -e prefs.js ]]; then
+    echo "$(basename "$0"): error: prefs.js not found in the Firefox profile directory"
+    exit 1
+fi
+
+mkdir -p "prefsjs_backups"
+backup_filename="prefs.js.backup.$(date +"%Y-%m-%d_%H%M")"
+mv prefs.js "prefsjs_backups/${backup_filename}" || (
+    echo "$(basename "$0"): error: cannot create backup file"
+    exit 1
+)
+echo "$(basename "$0"): info: prefs.js backup created at \"$(pwd)/prefsjs_backups/${backup_filename}\""
+
+prefs="@@"
+prefexp="user_pref[ 	]*\([ 	]*[\"']([^\"']+)[\"'][ 	]*,"
+while read -r line; do
+    if [[ "$line" =~ $prefexp && $prefs != *"@@${BASH_REMATCH[1]}@@"* ]]; then
+        prefs="${prefs}${BASH_REMATCH[1]}@@"
+    fi
+done <<< "$(grep -E "$prefexp" user.js)"
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    if [[ "$line" =~ ^$prefexp ]]; then
+        if [[ $prefs != *"@@${BASH_REMATCH[1]}@@"* ]]; then
+            echo "$line"
+        fi
+    else
+        echo "$line"
+    fi
+done < "prefsjs_backups/${backup_filename}" > prefs.js
+
+echo "$(basename "$0"): info: finished cleaning"
+popd > /dev/null || (
+    echo "$(basename "$0"): error: cannot return to initial directory"
+    exit 1
+)
+exit 0

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, currentHost, currentUser, ... }:
+{ lib, pkgs, currentHost, currentUser, ... }:
 
 {
   # Start the OpenSSH agent at login. Keys can be added with ssh-add, the agent
@@ -8,8 +8,8 @@
   programs.zsh = {
     enable = true;
 
-    # Since we enabled Zsh completion in home.nix via home-manager, we set this
-    # to false to avoid calling compinit twice.
+    # Since we handle Zsh completion in home.nix via home-manager, we set this
+    # to false to avoid calling compinit multiple times.
     enableCompletion = false;
   };
 
@@ -39,18 +39,38 @@
   fonts = {
     enableDefaultPackages = true;
     packages = [
-      pkgs.dejavu_fonts
-      pkgs.fira-code-nerdfont
-      pkgs.noto-fonts-emoji
+      pkgs.atkinson-hyperlegible
+      pkgs.commit-mono # Monospace
+      pkgs.dejavu_fonts # Fallbacks
+      pkgs.departure-mono
+      pkgs.fira-code
+      pkgs.fira-sans
+      pkgs.ibm-plex
+      pkgs.inter
+      pkgs.libertine
+      pkgs.libre-baskerville
+      pkgs.merriweather
+      pkgs.mona-sans
+      pkgs.monaspace
+      pkgs.newcomputermodern
+      pkgs.noto-fonts
+      pkgs.noto-fonts-color-emoji # Emoji
+      pkgs.public-sans # Sans-serif
+      pkgs.source-sans
+      pkgs.source-serif
+      pkgs.times-newer-roman # Serif
+      pkgs.tt2020
+      pkgs.work-sans
+      (pkgs.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
   };
 
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      sansSerif = [ "DejaVu Sans" ];
-      serif = [ "DejaVu Serif" ];
-      monospace = [ "FiraCode Nerd Font Mono" "Noto Color Emoji" ];
+      sansSerif = [ "Public Sans" "DejaVu Sans" ];
+      serif = [ "Times Newer Roman" "DejaVu Serif" ];
+      monospace = [ "Commit Mono" "DejaVu Sans Mono" "Symbols Nerd Font Mono" ];
       emoji = [ "Noto Color Emoji" ];
     };
   };
@@ -60,6 +80,6 @@
     description = "Simone Ragusa";
     extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
     shell = pkgs.zsh;
-    hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now is "nixos".
+    hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now it's "nixos".
   };
 }

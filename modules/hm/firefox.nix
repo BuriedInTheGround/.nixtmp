@@ -5,6 +5,8 @@ with lib;
 let
   cfg = config.garden.firefox;
 
+  jsonFormat = pkgs.formats.json { };
+
   container = types.submodule {
     options = {
       name = mkOption {
@@ -137,13 +139,19 @@ let
       </p></DL>
     '';
 
-  mkUserJs = { prefs ? { }, bookmarks ? [ ] }:
+  mkUserJs = { prefs ? { }, arkenfoxOverridePrefs ? { }, bookmarks ? [ ] }:
     let
-      prefs' = optionalAttrs (bookmark != [ ]) {
+      arkenfoxOverridePrefs' = optionalAttrs (bookmark != [ ]) {
         "browser.bookmarks.file" = toString (firefoxBookmarksFile bookmarks);
         "browser.places.importBookmarksHTML" = true;
-      } // prefs;
+      } // arkenfoxOverridePrefs;
     in ''
+      // ============ SETTINGS BEGIN ============
+      ${concatStrings (mapAttrsToList (name: value: ''
+        user_pref("${name}", ${builtins.toJSON value});
+      '') prefs)}
+      // ============= SETTINGS END =============
+
       // ============ ARKENFOX BEGIN ============
       ${fileContents "${pkgs.nur.repos.ataraxiasjel.arkenfox-userjs}/share/user.js/user.js"}
       // ============= ARKENFOX END =============
@@ -151,7 +159,7 @@ let
       // ============ OVERRIDE BEGIN ============
       ${concatStrings (mapAttrsToList (name: value: ''
         user_pref("${name}", ${builtins.toJSON value});
-      '') prefs')}
+      '') arkenfoxOverridePrefs')}
       // ============= OVERRIDE END =============
     '';
 in {
@@ -186,9 +194,26 @@ in {
       '';
       example = literalExpression ''
         [
-          "https://accounts.google.com/"
-          "https://mail.google.com/"
+          "https://accounts.google.com"
+          "https://mail.google.com"
         ]
+      '';
+    };
+
+    settings = mkOption {
+      type = types.attrsOf (jsonFormat.type // {
+        description = "Firefox preference.";
+      });
+      default = { };
+      description = ''
+        Attribute set of Firefox preferences as seen in `about:config`.
+      '';
+      example = literalExpression ''
+        {
+          "browser.startup.homepage" = "https://duckduckgo.com/";
+          "browser.search.region" = "en-US";
+          "browser.chrome.site_icons" = false;
+        }
       '';
     };
 
@@ -247,7 +272,10 @@ in {
       enable = true;
       package = pkgs.firefox.override {
         nativeMessagingHosts = optional cfg.supportTridactyl pkgs.tridactyl-native;
+        # NOTE: Updated on Firefox v128 (see https://mozilla.github.io/policy-templates/).
         extraPolicies = {
+          AutofillAddressEnabled = false;
+          AutofillCreditCardEnabled = false;
           CaptivePortal = false;
           Containers.Default = cfg.containers;
           Cookies.Allow = cfg.allowCookies;
@@ -262,11 +290,12 @@ in {
             Highlights = false;
             Pocket = false;
             SponsoredPocket = false;
-            Snippets = false;
+            Snippets = false; # Deprecated.
             Locked = true;
           };
+          PostQuantumKeyAgreementEnabled = true;
           UserMessaging = {
-            WhatsNew = false;
+            WhatsNew = false; # Deprecated.
             ExtensionRecommendations = false;
             FeatureRecommendations = false;
             UrlbarInterventions = false;
@@ -279,33 +308,24 @@ in {
       profiles.default = {
         extensions = cfg.extensions;
         extraConfig = mkUserJs {
-          prefs = {
+          prefs = cfg.settings;
+          # NOTE: Updated with arkenfox v128.
+          arkenfoxOverridePrefs = {
             # Allow Firefox to verify the safety of certain executables by
             # sending some information to the Google Safe Browsing service.
             "browser.safebrowsing.downloads.remote.enabled" = true; # 0403
 
-            # Enable searching from the location bar.
-            "keyword.enabled" = true; # 0801
-
             # Enable and customize search suggestions.
-            "browser.search.suggest.enabled" = true; # 0804
-            "browser.urlbar.suggest.searches" = true; # 0804
-            "browser.urlbar.suggest.engines" = false; # 0808
+            "browser.search.suggest.enabled" = true; # 0803
+            "browser.urlbar.suggest.searches" = true; # 0803
+            "browser.urlbar.suggest.engines" = false; # 0815
             "browser.urlbar.suggest.history" = true; # 5010
             "browser.urlbar.suggest.bookmark" = true; # 5010
             "browser.urlbar.suggest.openpage" = false; # 5010
             "browser.urlbar.suggest.topsites" = false; # 5010
 
-            # Send a cross-origin referer.
-            "network.http.referer.XOriginPolicy" = 0; # 1601
-
-            # Disable RFP.
-            "privacy.resistFingerprinting" = false; # 4501
-            "privacy.resistFingerprinting.letterboxing" = false; # 4504
-            "webgl.disabled" = false; # 4520
-
             # Set the browser home page.
-            "browser.startup.page" = 1;
+            "browser.startup.page" = 1; # 0102
             "browser.startup.homepage" =
               if (cfg.homepage != null) then
                 cfg.homepage
@@ -346,6 +366,7 @@ in {
             "Google" = mkIf (cfg.preferredSearchEngine != "Google") {
               metaData.hidden = true;
             };
+            "Qwant".metaData.hidden = true;
             "Wikipedia (en)".metaData.hidden = true;
             "Nix Packages" = {
               urls = [{

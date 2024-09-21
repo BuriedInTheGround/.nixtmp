@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+pictures="$HOME/Pictures"
+
+# If the ~/Pictures/wallpapers directory exists, select a random wallpaper.
+if [[ -d "$pictures" ]]; then
+    names=$(find "$pictures/wallpapers"/*.{jpg,png} -prune -print 2> /dev/null)
+    if (( "$(echo "$names" | wc -l)" > 0 )); then
+        selected=$(echo "$names" | shuf -n 1)
+        ln -sf "$selected" "$pictures/wallpaper.png"
+    fi
+fi
+
+# If no wallpaper is selected and a themed wallpaper is available, select it.
+if [[ ! -e "$pictures/wallpaper.png" ]]; then
+    if [[ -e "$pictures/wallpaper-$NIXOS_THEME.png" ]]; then
+        ln -s "$pictures/wallpaper-$NIXOS_THEME.png" "$pictures/wallpaper.png"
+    fi
+fi
+
+# Apply the selected wallpaper.
+feh --no-fehbg --bg-fill "$pictures/wallpaper.png"
+betterlockscreen --update "$pictures/wallpaper.png" --fx dimblur

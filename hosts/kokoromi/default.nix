@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -42,8 +42,20 @@
   services.tlp = {
     enable = true;
     settings = {
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+
+      # Helps maintain long-term battery health when plugged in continuously.
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
 
@@ -52,17 +64,7 @@
 
   # We enable temperature management to prevent the CPU from overheating.
   # This can also help with battery life.
-  services.thermald = {
-    enable = true;
-    package = pkgs.thermald.overrideAttrs (old: {
-      patches = (old.patches or [ ]) ++ [
-        (pkgs.fetchurl {
-          url = "https://patch-diff.githubusercontent.com/raw/intel/thermal_daemon/pull/422.patch";
-          hash = "sha256-GQFMgVA+cLEQ/zsjq9Zj8ifk+6k2aHSLqx9BAyxMG/c=";
-        })
-      ];
-    });
-  };
+  services.thermald.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

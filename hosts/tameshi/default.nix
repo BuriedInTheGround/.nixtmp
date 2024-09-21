@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -16,14 +16,10 @@
   };
 
   # We want NTFS support.
-  boot.supportedFilesystems = { ntfs = true; };
+  boot.supportedFilesystems.ntfs = true;
 
   # We use NetworkManager for networking.
   networking.networkmanager.enable = true;
-
-  # TODO: Remove. It should not be needed since we are using NetworkManager.
-  # networking.useDHCP = true;
-  # networking.interfaces.<name>.useDHCP = true;
 
   # We use the Italian time zone.
   time.timeZone = "Europe/Rome";
@@ -46,8 +42,18 @@
     settings.General = {
       DiscoverableTimeout = 0;
       FastConnectable = true;
-      JustWorksRepairing = "always";
+      JustWorksRepairing = "confirm";
     };
+  };
+
+  # We enable the local print service with wireless availability.
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.epson-escpr2 ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
   };
 
   # TODO: Remove.
@@ -70,7 +76,7 @@
   };
 
   environment.systemPackages = [
-    # TODO: (pkgs.uutils-coreutils.override { prefix = ""; })
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.uutils-coreutils-noprefix
   ];
 
   # This value determines the NixOS release from which the default
@@ -79,5 +85,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 }

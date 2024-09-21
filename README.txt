@@ -28,7 +28,7 @@ Contexts:
 
 - flake: affects flake-related things, main changes are in flake.nix or flake.lock
 
-- all: affects one or more hosts, one or more users, and possibly the lib
+- all: affects one or more hosts, one or more users, and possibly the lib and/or flake-related things
 
 - lib: affects one or more functions of the lib
 - <lib_function_name>: affects the specified lib function
