@@ -7,6 +7,7 @@ lib.nixosSystem {
   inherit lib;
 
   modules = [
+    inputs.disko.nixosModules.disko
     ../hosts/${name}
     ../hosts/shared.nix
     ../users/${user}/nixos.nix

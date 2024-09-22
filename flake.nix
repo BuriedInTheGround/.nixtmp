@@ -10,6 +10,12 @@
     # We use the unstable nixpkgs repo for some packages, such as Neovim.
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # TODO
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # We need specific hardware configurations for some hosts.
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
