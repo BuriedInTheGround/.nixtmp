@@ -35,7 +35,7 @@
   };
 
   # We enable natural scrolling for the touchpad.
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.libinput.touchpad.naturalScrolling = true;
 
   # We use power management to extend battery life.
   powerManagement.powertop.enable = true;

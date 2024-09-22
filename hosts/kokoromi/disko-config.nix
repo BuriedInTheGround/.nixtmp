@@ -1,9 +1,11 @@
+{ device ? "/dev/disk/by-id/some-disk-id", ... }:
+
 {
   disko.devices = {
     disk = {
       main = {
+        inherit device;
         type = "disk";
-        device = "/dev/disk/by-id/some-disk-id"; # Overwritten by disko-install.
         content = {
           type = "gpt";
           partitions = {
