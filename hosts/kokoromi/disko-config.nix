@@ -3,6 +3,7 @@
     disk = {
       main = {
         type = "disk";
+        device = "/dev/disk/by-id/some-disk-id"; # Overwritten by disko-install.
         content = {
           type = "gpt";
           partitions = {

@@ -6,8 +6,6 @@
     ./hardware-configuration.nix
   ];
 
-  disko.devices.disk.main.device = "/dev/sda";
-
   # We want to delete all files in /tmp during boot.
   boot.tmp.cleanOnBoot = true;
 
