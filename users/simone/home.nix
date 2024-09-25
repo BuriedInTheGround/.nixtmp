@@ -1204,6 +1204,7 @@ in {
             { name = "Benjamin Keep"; url = "https://www.benjaminkeep.com/"; }
             { name = "Bionic Reading"; url = "https://app.bionic-reading.com/"; }
             { name = "C data types - Wikipedia"; url = "https://en.wikipedia.org/wiki/C_data_types"; }
+            { name = "Choose a License"; url = "https://choosealicense.com/"; }
             { name = "cobalt"; url = "https://cobalt.tools/"; }
             { name = "Command Line Interface Guidelines"; url = "https://clig.dev/"; }
             { name = "Conventional Commits"; url = "https://www.conventionalcommits.org/"; }
@@ -1261,6 +1262,7 @@ in {
             { name = "Watson Text to Speech"; url = "https://www.ibm.com/demos/live/tts-demo/self-service/home"; }
             { name = "Xe Iaso"; url = "https://xeiaso.net/"; }
             { name = "Yr - Weather forecast"; url = "https://www.yr.no/en"; }
+            { name = "ZSH - Documentation"; url = "https://zsh.sourceforge.io/Doc/"; }
           ];
         }
       ];
