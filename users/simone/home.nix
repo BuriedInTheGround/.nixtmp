@@ -118,6 +118,7 @@ in {
     "vim"     = "nvim";
     "dust"    = "dust --reverse --no-colors --bars-on-right";
     "mpfhd"   = "mpv --ytdl-format='bestvideo[height<=?1080]+bestaudio/best'";
+    "ff"      = "fastfetch";
   };
 
   # Enable management of XDG directories.
