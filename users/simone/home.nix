@@ -1065,12 +1065,16 @@ in {
           name = "Cryptography and Mathematics";
           bookmarks = [
             { name = "A Computational Introduction to Number Theory and Algebra"; url = "https://shoup.net/ntb/"; }
+            { name = "A Few Thoughts on Cryptographic Engineering"; url = "https://blog.cryptographyengineering.com/"; }
             { name = "A Graduate Course in Applied Cryptography"; url = "https://toc.cryptobook.us/"; }
             { name = "An Introduction to Secret-Sharing-Based Secure Multiparty Computation"; url = "https://eprint.iacr.org/2022/062"; }
             { name = "Ben Lynn Notes"; url = "https://crypto.stanford.edu/pbc/notes/"; }
+            { name = "Cryptographic Computing"; url = "https://users-cs.au.dk/orlandi/crycom/"; }
             { name = "Desmos | Geometry"; url = "https://www.desmos.com/geometry"; }
+            { name = "Dhole Moments"; url = "https://soatok.blog/category/cryptography/"; }
             { name = "GeoGebra Classic"; url = "https://www.geogebra.org/classic"; }
             { name = "Handbook of Applied Cryptography"; url = "https://cacr.uwaterloo.ca/hac/"; }
+            { name = "Key Material"; url = "https://keymaterial.net/category/cryptography/"; }
             { name = "Sage Cell Server"; url = "https://sagecell.sagemath.org/"; }
             { name = "Sage Reference Manual"; url = "https://doc.sagemath.org/html/en/reference/"; }
             { name = "Tamarin Prover"; url = "https://tamarin-prover.com/"; }
@@ -1198,6 +1202,7 @@ in {
             { name = "Benjamin Keep"; url = "https://www.benjaminkeep.com/"; }
             { name = "Bionic Reading"; url = "https://app.bionic-reading.com/"; }
             { name = "C data types - Wikipedia"; url = "https://en.wikipedia.org/wiki/C_data_types"; }
+            { name = "cobalt"; url = "https://cobalt.tools/"; }
             { name = "Command Line Interface Guidelines"; url = "https://clig.dev/"; }
             { name = "Conventional Commits"; url = "https://www.conventionalcommits.org/"; }
             { name = "Coursera"; url = "https://www.coursera.org/"; }
