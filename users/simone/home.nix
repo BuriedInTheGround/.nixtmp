@@ -62,6 +62,7 @@ in {
     pkgs.marksman
     pkgs.nil
     pkgs.python311Packages.python-lsp-server
+    pkgs.rust-analyzer
     pkgs.tailwindcss-language-server
     pkgs.typst-lsp
     pkgs.vscode-langservers-extracted
