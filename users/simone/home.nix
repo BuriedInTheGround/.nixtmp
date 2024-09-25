@@ -1125,6 +1125,7 @@ in {
         {
           name = "Rust";
           bookmarks = [
+            { name = "crates.io"; url = "https://crates.io/"; }
             { name = "Docs.rs"; url = "https://docs.rs/"; }
             { name = "Query.rs"; url = "https://query.rs/"; }
             { name = "Rust By Example"; url = "https://doc.rust-lang.org/stable/rust-by-example/"; }
