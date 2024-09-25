@@ -955,6 +955,9 @@ in {
         # Bluesky
         "https://bsky.app"
 
+        # Duolingo
+        "https://www.duolingo.com"
+
         # Excalidraw
         "https://excalidraw.com"
         "https://math.preview.excalidraw.com"
@@ -1203,6 +1206,7 @@ in {
             { name = "Detexify"; url = "https://detexify.kirelabs.org/"; }
             { name = "Devhints"; url = "https://devhints.io/"; }
             { name = "Dizionario Etimologico"; url = "https://etimo.it/"; }
+            { name = "Duolingo"; url = "https://www.duolingo.com/learn"; }
             { name = "Emojipedia"; url = "https://emojipedia.org/"; }
             { name = "Every Time Zone"; url = "https://everytimezone.com/"; }
             { name = "Excalidraw"; url = "https://excalidraw.com/"; }
@@ -1290,6 +1294,7 @@ in {
         autocmd DocStart math.preview.excalidraw.com mode ignore
         autocmd DocStart open.spotify.com mode ignore
         autocmd DocStart web.whatsapp.com mode ignore
+        autocmd DocStart www.duolingo.com mode ignore
         autocmd DocStart www.netflix.com mode ignore
         autocmd DocStart www.tldraw.com mode ignore
         autocmd DocStart www.twitch.tv mode ignore
