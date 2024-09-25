@@ -119,6 +119,7 @@ in {
     "dust"    = "dust --reverse --no-colors --bars-on-right";
     "mpfhd"   = "mpv --ytdl-format='bestvideo[height<=?1080]+bestaudio/best'";
     "ff"      = "fastfetch";
+    "nap"     = "systemctl suspend";
   };
 
   # Enable management of XDG directories.
