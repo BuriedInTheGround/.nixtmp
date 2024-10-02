@@ -1321,6 +1321,25 @@ in {
     };
   };
 
+  systemd.user.services = {
+    set-wallpaper = {
+      Unit.Description = "Set a random wallpaper";
+      Service = {
+        Environment = "PATH=/etc/profiles/per-user/${currentUser}/bin:/run/current-system/sw/bin";
+        ExecStart = "/home/${currentUser}/Scripts/set-wallpaper";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
+  systemd.user.timers = {
+    set-wallpaper = {
+      Unit.Description = "Set a random wallpaper every 60 minutes";
+      Timer.OnUnitActiveSec = "60min";
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
   home.file."Pictures" = {
     source = ./wallpapers;
     recursive = true;
