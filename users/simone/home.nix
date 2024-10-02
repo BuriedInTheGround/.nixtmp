@@ -69,7 +69,10 @@ in {
     pkgs.yaml-language-server
 
     # Formatters.
+    pkgs.gofumpt
     pkgs.nixfmt-rfc-style
+    pkgs.ruff
+    pkgs.rustfmt
     pkgs.stylua
     pkgs.typstyle
 
