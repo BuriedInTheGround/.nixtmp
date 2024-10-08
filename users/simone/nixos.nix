@@ -1,6 +1,9 @@
 { lib, pkgs, currentHost, currentUser, ... }:
 
 {
+  # Configure the Android Debug Bridge (adb).
+  programs.adb.enable = true;
+
   # Start the OpenSSH agent at login. Keys can be added with ssh-add, the agent
   # will remember the passphrase.
   programs.ssh.startAgent = true;
@@ -78,7 +81,7 @@
   users.users.${currentUser} = {
     isNormalUser = true;
     description = "Simone Ragusa";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
+    extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" ];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now it's "nixos".
   };
