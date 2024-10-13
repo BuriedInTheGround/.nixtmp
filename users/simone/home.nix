@@ -931,7 +931,6 @@ in {
       rules = {
         "Qalculate-gtk".state = "floating";
       };
-      startupPrograms = [ "set-wallpaper" ];
     };
 
     firefox = {
