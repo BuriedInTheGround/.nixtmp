@@ -1092,6 +1092,7 @@ in {
             { name = "GeoGebra Classic"; url = "https://www.geogebra.org/classic"; }
             { name = "Handbook of Applied Cryptography"; url = "https://cacr.uwaterloo.ca/hac/"; }
             { name = "Key Material"; url = "https://keymaterial.net/category/cryptography/"; }
+            { name = "Mathematics for Computer Science"; url = "https://courses.csail.mit.edu/6.042/spring18/mcs.pdf"; }
             { name = "Sage Cell Server"; url = "https://sagecell.sagemath.org/"; }
             { name = "Sage Reference Manual"; url = "https://doc.sagemath.org/html/en/reference/"; }
             { name = "Tamarin Prover"; url = "https://tamarin-prover.com/"; }
@@ -1128,6 +1129,7 @@ in {
             { name = "NixOS/nixpkgs"; url = "https://github.com/NixOS/nixpkgs"; }
             { name = "Nixpkgs PR progress tracker"; url = "https://nixpk.gs/pr-tracker.html"; }
             { name = "noogle"; url = "https://noogle.dev/"; }
+            { name = "The Nix lectures"; url = "https://ayats.org/blog/nix-tuto-1"; }
             { name = "Zero to Nix"; url = "https://zero-to-nix.com/"; }
           ];
         }
@@ -1163,6 +1165,7 @@ in {
             { name = "Commit Mono"; url = "https://commitmono.com/"; }
             { name = "Dash - Wikipedia"; url = "https://en.wikipedia.org/wiki/Dash"; }
             { name = "Departure Mono"; url = "https://departuremono.com/"; }
+            { name = "ドットコロン"; url = "https://dotcolon.net/"; }
             { name = "Font Squirrel"; url = "https://www.fontsquirrel.com/"; }
             { name = "Fonts by Hoefler&Co"; url = "https://www.typography.com/"; }
             { name = "Fontsource"; url = "https://fontsource.org/"; }
@@ -1202,6 +1205,7 @@ in {
             { name = "PageSpeed Insights"; url = "https://pagespeed.web.dev/"; }
             { name = "Phosphor Icons"; url = "https://phosphoricons.com/"; }
             { name = "Place ID Finder | Maps JavaScript API"; url = "https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder"; }
+            { name = "player.style"; url = "https://player.style/"; }
             { name = "Quantum Lorem Ipsum"; url = "https://raw.githubusercontent.com/neilpanchal/quantum-lorem-ipsum/master/quantum-lorem-ipsum.txt"; }
             { name = "Svelte"; url = "https://svelte.dev/"; }
             { name = "SvelteKit"; url = "https://kit.svelte.dev/"; }
@@ -1254,6 +1258,7 @@ in {
             { name = "Just Programmer's Manual"; url = "https://just.systems/man/en/"; }
             { name = "Keep a Changelog"; url = "https://keepachangelog.com/"; }
             { name = "Killed by Google"; url = "https://killedbygoogle.com/"; }
+            { name = "Latency Numbers Every Programmer Should Know"; url = "https://samwho.dev/numbers/"; }
             { name = "latex2png"; url = "https://latex2png.com/"; }
             { name = "LaTeX - Wikibooks"; url = "https://en.wikibooks.org/wiki/LaTeX"; }
             { name = "lazy.nvim"; url = "https://lazy.folke.io/"; }
@@ -1261,12 +1266,15 @@ in {
             { name = "Manx"; url = "https://vt100.net/manx/"; }
             { name = "MathJax basic tutorial and quick reference"; url = "https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"; }
             { name = "NIST Uncertainty Machine"; url = "https://uncertainty.nist.gov/"; }
+            { name = "NO_COLOR"; url = "https://no-color.org/"; }
             { name = "No Starch Press"; url = "https://nostarch.com/"; }
             { name = "PanelsDesu"; url = "https://panelsdesu.com/"; }
             { name = "Policy Templates for Firefox"; url = "https://mozilla.github.io/policy-templates/"; }
+            { name = "Project Gutenberg"; url = "https://www.gutenberg.org/"; }
             { name = "RegExr"; url = "https://regexr.com/"; }
             { name = "research!rsc"; url = "https://research.swtch.com/"; }
             { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
+            { name = "Screego"; url = "https://app.screego.net/"; }
             { name = "Semantic Versioning"; url = "https://semver.org/"; }
             { name = "SequenceDiagram.org"; url = "https://sequencediagram.org/"; }
             { name = "Simone Ragusa"; url = "https://interrato.dev/"; }
@@ -1276,6 +1284,7 @@ in {
             { name = "Typst Documentation"; url = "https://typst.app/docs/"; }
             { name = "Usage message - Wikipedia"; url = "https://en.wikipedia.org/wiki/Usage_message"; }
             { name = "Watson Text to Speech"; url = "https://www.ibm.com/demos/live/tts-demo/self-service/home"; }
+            { name = "WordSafety.com"; url = "http://wordsafety.com/"; }
             { name = "Xe Iaso"; url = "https://xeiaso.net/"; }
             { name = "Yr - Weather forecast"; url = "https://www.yr.no/en"; }
             { name = "ZSH - Documentation"; url = "https://zsh.sourceforge.io/Doc/"; }
