@@ -613,6 +613,7 @@ in {
     feh.enable = true; # Light-weight image viewer.
     jq.enable = true; # JSON processor.
     ripgrep.enable = true; # Recursive search in directories.
+    yt-dlp.enable = true; # CLI audio/video downloader.
   };
 
   # Cool lock screen service.
