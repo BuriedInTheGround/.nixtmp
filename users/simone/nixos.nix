@@ -52,6 +52,8 @@
       pkgs.commit-mono # Monospace
       pkgs.dejavu_fonts # Fallbacks
       pkgs.departure-mono
+      pkgs.dotcolon-fonts
+      pkgs.eb-garamond
       pkgs.fira-code
       pkgs.fira-sans
       pkgs.ibm-plex
