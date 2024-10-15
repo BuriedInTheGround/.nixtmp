@@ -1,8 +1,14 @@
 { lib, pkgs, currentHost, currentUser, ... }:
 
 {
-  # Configure the Android Debug Bridge (adb).
+  # We configure the Android Debug Bridge (adb) to work with Android devices.
   programs.adb.enable = true;
+
+  # We enable seamless execution of AppImage applications.
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # Start the OpenSSH agent at login. Keys can be added with ssh-add, the agent
   # will remember the passphrase.
