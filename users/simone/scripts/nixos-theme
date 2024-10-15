@@ -31,7 +31,7 @@ if [[ "$1" != "dark" && "$1" != "light" ]]; then
 fi
 theme="$1"
 
-path="$XDG_CONFIG_HOME/nixos-config/users/simone/home.nix"
+path="$XDG_CONFIG_HOME/nixos/users/$USER/home.nix"
 
 matching=$(grep -E -c 'theme = "(dark|light)"' "$path" 2> /dev/null)
 if [[ matching -ne 1 ]]; then
