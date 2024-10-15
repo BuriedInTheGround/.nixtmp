@@ -31,6 +31,13 @@
   # GSettings options to be applied correctly.
   programs.dconf.enable = true;
 
+  # We enable Docker in rootless mode, as it is useful when someone gives us
+  # a Docker Compose service or the like.
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # We enable the geolocation service for Redshift to work properly.
   services.geoclue2.enable = true;
 
