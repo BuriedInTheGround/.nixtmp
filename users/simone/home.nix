@@ -61,7 +61,7 @@ in {
     pkgs.ltex-ls
     pkgs.marksman
     pkgs.nil
-    pkgs.python311Packages.python-lsp-server
+    pkgs.pyright
     pkgs.rust-analyzer
     pkgs.tailwindcss-language-server
     pkgs.typst-lsp
