@@ -120,7 +120,6 @@ in {
     "gti"     = "printf '\\x1b[1;33mI absolutely know that you meant to type \\x1b[1;35m\"git\"\\x1b[1;33m.\\x1b[0m\\n\\n';git ";
     "vim"     = "nvim";
     "dust"    = "dust --reverse --no-colors --bars-on-right";
-    "mpfhd"   = "mpv --ytdl-format='bestvideo[height<=?1080]+bestaudio/best'";
     "ff"      = "fastfetch";
     "nap"     = "systemctl suspend";
   };
@@ -546,6 +545,21 @@ in {
     userName = "Simone Ragusa";
   };
 
+  # Media player.
+  programs.mpv = {
+    enable = true;
+    profiles = {
+      "1080".ytdl-format = "bestvideo[height<=?1080]+bestaudio/best";
+      "1440".ytdl-format = "bestvideo[height<=?1440]+bestaudio/best";
+    };
+    scripts = with pkgs.mpvScripts; [
+      mpris
+      mpv-cheatsheet
+      thumbfast
+      uosc
+    ];
+  };
+
   # Application launcher.
   programs.rofi = {
     enable = true;
@@ -598,7 +612,6 @@ in {
     fd.enable = true; # Fast alternative to find.
     feh.enable = true; # Light-weight image viewer.
     jq.enable = true; # JSON processor.
-    mpv.enable = true; # Media player.
     ripgrep.enable = true; # Recursive search in directories.
   };
 
