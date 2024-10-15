@@ -1046,7 +1046,7 @@ in {
             { name = "tldraw"; url = "https://www.tldraw.com/"; }
             { name = "Translate"; url = "https://translate.google.com/"; }
             { name = "Treccani"; url = "https://www.treccani.it/"; }
-            { name = "Twitch"; url = "https://www.twitch.com/"; }
+            { name = "Twitch"; url = "https://www.twitch.tv/"; }
             { name = "Uniweb"; url = "https://uniweb.unipd.it/"; }
             { name = "WhatsApp"; url = "https://web.whatsapp.com/"; }
             { name = "YouTube"; url = "https://www.youtube.com/"; }
