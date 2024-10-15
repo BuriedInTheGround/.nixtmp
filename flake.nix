@@ -10,7 +10,8 @@
     # We use the unstable nixpkgs repo for some packages, such as Neovim.
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # TODO
+    # We use disko to configure the file systems to be mounted. Note that the
+    # same configuration should be used during installation.
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
