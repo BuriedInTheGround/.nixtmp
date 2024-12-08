@@ -1171,6 +1171,7 @@ in {
             { name = "ドットコロン"; url = "https://dotcolon.net/"; }
             { name = "Font Library"; url = "https://fontlibrary.org/en"; }
             { name = "Font Squirrel"; url = "https://www.fontsquirrel.com/"; }
+            { name = "Fonts & Encodings - Yannis Haralambous"; url = "https://hal.science/hal-02112942/document"; }
             { name = "Fonts by Hoefler&Co"; url = "https://www.typography.com/"; }
             { name = "Fontsource"; url = "https://fontsource.org/"; }
             { name = "Fontspring"; url = "https://www.fontspring.com/"; }
