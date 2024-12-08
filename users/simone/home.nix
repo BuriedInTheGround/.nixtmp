@@ -208,7 +208,9 @@ in {
       setopt PUSHD_TO_HOME
 
       # Expansion and Globbing.
-      setopt NO_EXTENDED_GLOB
+      setopt CASE_PATHS
+      setopt NUMERIC_GLOB_SORT
+      setopt RC_EXPAND_PARAM
 
       # Input/Output.
       setopt IGNORE_EOF
