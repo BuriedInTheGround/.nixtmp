@@ -1091,6 +1091,7 @@ in {
             { name = "Cryptographic Computing"; url = "https://users-cs.au.dk/orlandi/crycom/"; }
             { name = "Desmos | Geometry"; url = "https://www.desmos.com/geometry"; }
             { name = "Dhole Moments"; url = "https://soatok.blog/category/cryptography/"; }
+            { name = "EncryptedSystems.org"; url = "https://encryptedsystems.org/"; }
             { name = "GeoGebra Classic"; url = "https://www.geogebra.org/classic"; }
             { name = "Handbook of Applied Cryptography"; url = "https://cacr.uwaterloo.ca/hac/"; }
             { name = "Key Material"; url = "https://keymaterial.net/category/cryptography/"; }
@@ -1168,6 +1169,7 @@ in {
             { name = "Dash - Wikipedia"; url = "https://en.wikipedia.org/wiki/Dash"; }
             { name = "Departure Mono"; url = "https://departuremono.com/"; }
             { name = "ドットコロン"; url = "https://dotcolon.net/"; }
+            { name = "Font Library"; url = "https://fontlibrary.org/en"; }
             { name = "Font Squirrel"; url = "https://www.fontsquirrel.com/"; }
             { name = "Fonts by Hoefler&Co"; url = "https://www.typography.com/"; }
             { name = "Fontsource"; url = "https://fontsource.org/"; }
@@ -1214,6 +1216,7 @@ in {
             { name = "SweetAlert2"; url = "https://sweetalert2.github.io/"; }
             { name = "Tabler Icons"; url = "https://tablericons.com/"; }
             { name = "Tailwind CSS"; url = "https://tailwindcss.com/"; }
+            { name = "templ docs"; url = "https://templ.guide/"; }
           ];
         }
         {
@@ -1231,10 +1234,12 @@ in {
             { name = "Command Line Interface Guidelines"; url = "https://clig.dev/"; }
             { name = "Conventional Commits"; url = "https://www.conventionalcommits.org/"; }
             { name = "Coursera"; url = "https://www.coursera.org/"; }
+            { name = "Cronokirby (Lúcás Meier)"; url = "https://cronokirby.com/"; }
             { name = "CTAN"; url = "https://ctan.org/"; }
             { name = "decodeunicode"; url = "https://decodeunicode.org/"; }
             { name = "Detexify"; url = "https://detexify.kirelabs.org/"; }
             { name = "Devhints"; url = "https://devhints.io/"; }
+            { name = "Discord"; url = "https://discord.com/channels/@me"; }
             { name = "Dizionario Etimologico"; url = "https://etimo.it/"; }
             { name = "Duolingo"; url = "https://www.duolingo.com/learn"; }
             { name = "Emojipedia"; url = "https://emojipedia.org/"; }
@@ -1252,6 +1257,7 @@ in {
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "ICANN Lookup"; url = "https://lookup.icann.org/"; }
             { name = "Internet protocol suite - Wikipedia"; url = "https://en.wikipedia.org/wiki/Internet_protocol_suite"; }
+            { name = "IOC.exchange - Mastodon"; url = "https://ioc.exchange/"; }
             { name = "Jisho"; url = "https://jisho.org/"; }
             { name = "Johnny.Decimal"; url = "https://johnnydecimal.com/"; }
             { name = "Johnny.Decimal Forum"; url = "https://forum.johnnydecimal.com/"; }
@@ -1273,6 +1279,7 @@ in {
             { name = "PanelsDesu"; url = "https://panelsdesu.com/"; }
             { name = "Policy Templates for Firefox"; url = "https://mozilla.github.io/policy-templates/"; }
             { name = "Project Gutenberg"; url = "https://www.gutenberg.org/"; }
+            { name = "QuickPic"; url = "https://quickpic.t3.gg/"; }
             { name = "RegExr"; url = "https://regexr.com/"; }
             { name = "research!rsc"; url = "https://research.swtch.com/"; }
             { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
@@ -1283,6 +1290,7 @@ in {
             { name = "Special Publication 811 | NIST"; url = "https://www.nist.gov/pml/special-publication-811"; }
             { name = "Standard Notes"; url = "https://app.standardnotes.com/"; }
             { name = "SVG Viewer"; url = "https://www.svgviewer.dev/"; }
+            { name = "Time.is"; url = "https://time.is/"; }
             { name = "Typst Documentation"; url = "https://typst.app/docs/"; }
             { name = "Usage message - Wikipedia"; url = "https://en.wikipedia.org/wiki/Usage_message"; }
             { name = "Watson Text to Speech"; url = "https://www.ibm.com/demos/live/tts-demo/self-service/home"; }
