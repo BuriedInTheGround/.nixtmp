@@ -1358,7 +1358,10 @@ in {
     set-wallpaper = {
       Unit.Description = "Set a random wallpaper";
       Service = {
-        Environment = "PATH=/etc/profiles/per-user/${currentUser}/bin:/run/current-system/sw/bin";
+        Environment = [
+          "PATH=/etc/profiles/per-user/${currentUser}/bin:/run/current-system/sw/bin"
+          "NIXOS_THEME=${theme}"
+        ];
         ExecStart = "/home/${currentUser}/Scripts/set-wallpaper";
       };
       Install.WantedBy = [ "graphical-session.target" ];
