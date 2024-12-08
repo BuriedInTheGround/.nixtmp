@@ -78,6 +78,7 @@
       pkgs.source-serif
       pkgs.times-newer-roman # Serif
       pkgs.tt2020
+      pkgs.ucs-fonts
       pkgs.work-sans
       (pkgs.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
