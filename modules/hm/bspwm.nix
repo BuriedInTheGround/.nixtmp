@@ -252,8 +252,8 @@ in {
         "super + KP_Enter" = "${terminalEmulator}";
 
         # Control the audio volume level.
-        "XF86Audio{Lower,Raise}Volume" = "${pkgs.alsaUtils}/bin/amixer sset Master 5%{-,+}";
-        "@XF86AudioMute" = "${pkgs.alsaUtils}/bin/amixer sset Master toggle";
+        "XF86Audio{Lower,Raise}Volume" = "${pkgs.wireplumber}/bin/wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 0.05{-,+}";
+        "@XF86AudioMute" = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
         # Quit/Restart bspwm.
         "super + alt + {q,r}" = "bspc {quit,wm -r}";
