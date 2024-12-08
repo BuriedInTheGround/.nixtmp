@@ -1329,6 +1329,7 @@ in {
         autocmd DocStart open.spotify.com mode ignore
         autocmd DocStart web.whatsapp.com mode ignore
         autocmd DocStart www.duolingo.com mode ignore
+        autocmd DocStart www.geogebra.org mode ignore
         autocmd DocStart www.netflix.com mode ignore
         autocmd DocStart www.tldraw.com mode ignore
         autocmd DocStart www.twitch.tv mode ignore
