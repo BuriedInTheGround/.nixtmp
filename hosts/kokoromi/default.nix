@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -62,6 +62,9 @@
 
   # We want to prevent accidental shutdowns.
   services.logind.powerKey = "ignore";
+
+  # We need to fallback to unencrypted requests for eduroam to work.
+  services.resolved.dnsovertls = lib.mkForce "opportunistic";
 
   # We enable temperature management to prevent the CPU from overheating.
   # This can also help with battery life.
