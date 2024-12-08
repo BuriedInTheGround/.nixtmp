@@ -305,17 +305,17 @@ in {
   programs.cava = {
     enable = true;
     settings = {
-      output.alacritty_sync = 1;
+      output.synchronized_sync = 1;
       color = {
         gradient = 1;
-        gradient_color_1 = "${perpetua.turquoise}";
-        gradient_color_2 = "${perpetua.green}";
-        gradient_color_3 = "${perpetua.lime}";
-        gradient_color_4 = "${perpetua.yellow}";
-        gradient_color_5 = "${perpetua.orange}";
-        gradient_color_6 = "${perpetua.red}";
-        gradient_color_7 = "${perpetua.pink}";
-        gradient_color_8 = "${perpetua.lavender}";
+        gradient_color_1 = "'${perpetua.turquoise}'";
+        gradient_color_2 = "'${perpetua.green}'";
+        gradient_color_3 = "'${perpetua.lime}'";
+        gradient_color_4 = "'${perpetua.yellow}'";
+        gradient_color_5 = "'${perpetua.orange}'";
+        gradient_color_6 = "'${perpetua.red}'";
+        gradient_color_7 = "'${perpetua.pink}'";
+        gradient_color_8 = "'${perpetua.lavender}'";
       };
       smoothing.noise_reduction = 66;
       eq = {
