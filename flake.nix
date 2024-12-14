@@ -43,7 +43,7 @@
   let
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
-      inputs.nur.overlay
+      inputs.nur.overlays.default
     ];
 
     lib = inputs.nixpkgs.lib.extend (final: prev: {
