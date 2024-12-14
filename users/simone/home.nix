@@ -1106,6 +1106,14 @@ in {
           ];
         }
         {
+          name = "Cybersecurity";
+          bookmarks = [
+            { name = "HackTricks"; url = "https://book.hacktricks.xyz/"; }
+            { name = "pwn.college"; url = "https://pwn.college/"; }
+            { name = "Web Security Academy - PortSwigger"; url = "https://portswigger.net/web-security/all-topics"; }
+          ];
+        }
+        {
           name = "Go";
           bookmarks = [
             { name = "Effective Go"; url = "https://go.dev/doc/effective_go"; }
@@ -1113,6 +1121,7 @@ in {
             { name = "Go Playground"; url = "https://go.dev/play/"; }
             { name = "The Go Programming Language"; url = "https://go.dev/"; }
             { name = "The Go Programming Language Specification"; url = "https://go.dev/ref/spec"; }
+            { name = "TinyGo"; url = "https://tinygo.org/"; }
           ];
         }
         {
@@ -1142,6 +1151,13 @@ in {
             { name = "One Piece Power"; url = "https://onepiecepower.com/index"; }
             { name = "One Piece Filler List"; url = "https://www.animefillerlist.com/shows/one-piece"; }
             { name = "Watch order for Movies, Specials, Cover Stories"; url = "https://www.reddit.com/r/OnePiece/comments/tr0izv/watch_order_for_movies_specials_cover_stories_etc/"; }
+          ];
+        }
+        {
+          name = "Research";
+          bookmarks = [
+            { name = "Google Scholar"; url = "https://scholar.google.com/"; }
+            { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
           ];
         }
         {
@@ -1253,7 +1269,6 @@ in {
             { name = "fstab - Wikipedia"; url = "https://en.wikipedia.org/wiki/Fstab"; }
             { name = "Generatore di Anagrammi"; url = "https://www.generatorediparole.it/anagramma"; }
             { name = "GitLab"; url = "https://gitlab.com/"; }
-            { name = "Google Scholar"; url = "https://scholar.google.com/"; }
             { name = "Google Style Guides"; url = "https://google.github.io/styleguide/"; }
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "ICANN Lookup"; url = "https://lookup.icann.org/"; }
@@ -1283,7 +1298,6 @@ in {
             { name = "QuickPic"; url = "https://quickpic.t3.gg/"; }
             { name = "RegExr"; url = "https://regexr.com/"; }
             { name = "research!rsc"; url = "https://research.swtch.com/"; }
-            { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
             { name = "Screego"; url = "https://app.screego.net/"; }
             { name = "Semantic Versioning"; url = "https://semver.org/"; }
             { name = "SequenceDiagram.org"; url = "https://sequencediagram.org/"; }
