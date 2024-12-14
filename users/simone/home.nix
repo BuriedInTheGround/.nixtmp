@@ -346,7 +346,7 @@ in {
         pipe = true;
         key.width = 16;
         separator = "│ ";
-        percent.type = 6;
+        percent.type = 3;
         bar = {
           charElapsed = "█";
           charTotal = "░";
