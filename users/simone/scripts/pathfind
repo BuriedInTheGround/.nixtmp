@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+    echo "pathfind: error: missing name"
+    exit 1
+fi
+
+name="$1"
+
+which_res=$(which "$name" 2> /dev/null)
+if [[ -z "$which_res" ]]; then
+    echo "pathfind: $name: alias, shell built-in, or non-existent"
+    echo "pathfind: hint: use \`where $name\`"
+else
+    whereis_res=$(whereis "$name" | cut -d ':' -f 2)
+    whereis_res="${whereis_res#"${whereis_res%%[![:space:]]*}"}"
+
+    for match in $whereis_res; do
+        if [[ -f "$match" && -x "$match" ]]; then
+            readlink_res=$(readlink -f "$match")
+            echo "pathfind: $name: $readlink_res"
+            exit 0
+        fi
+    done
+
+    echo "pathfind: error: no executable found"
+    exit 1
+fi
