@@ -97,7 +97,7 @@
   users.users.${currentUser} = {
     isNormalUser = true;
     description = "Simone Ragusa";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" ];
+    extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" "dialout" ];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now it's "nixos".
   };
