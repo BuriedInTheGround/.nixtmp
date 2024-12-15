@@ -5,7 +5,7 @@
     # We pin our primary nixpkgs repository. Be careful when changing this, as
     # it affects the entire system. Always check the Backward Incompatibilities
     # section of the Release Notes in the NixOS manual before upgrading.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # We use the unstable nixpkgs repo for some packages, such as Neovim.
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -22,7 +22,7 @@
 
     # We use Home Manager to manage user environments (i.e. /home/<user>).
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

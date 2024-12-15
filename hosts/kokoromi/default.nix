@@ -22,9 +22,6 @@
   # We use the Italian time zone.
   time.timeZone = "Europe/Rome";
 
-  # We disable ALSA sound as it seems to cause conflicts with PipeWire.
-  sound.enable = false;
-
   # We enable audio with PipeWire and RealtimeKit for real-time audio.
   security.rtkit.enable = true;
   services.pipewire = {
