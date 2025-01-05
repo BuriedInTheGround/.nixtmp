@@ -58,7 +58,7 @@ in {
     pkgs.clang-tools
     pkgs.gopls
     pkgs.lua-language-server
-    pkgs.ltex-ls
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ltex-ls-plus
     pkgs.marksman
     pkgs.nil
     pkgs.pyright
