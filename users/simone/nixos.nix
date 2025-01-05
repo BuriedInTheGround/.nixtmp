@@ -31,11 +31,11 @@
   # GSettings options to be applied correctly.
   programs.dconf.enable = true;
 
-  # We enable Docker in rootless mode, as it is useful when someone gives us
-  # a Docker Compose service or the like.
-  virtualisation.docker.rootless = {
+  # We enable Docker, as it is useful when someone gives us a Docker
+  # Compose service or the like.
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    autoPrune.enable = true;
   };
 
   # We enable the geolocation service for Redshift to work properly.
@@ -97,7 +97,7 @@
   users.users.${currentUser} = {
     isNormalUser = true;
     description = "Simone Ragusa";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" "dialout" ];
+    extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" "dialout" "docker" ];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now it's "nixos".
   };
