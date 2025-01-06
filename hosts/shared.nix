@@ -1,4 +1,4 @@
-{ pkgs, currentHost, currentUser, ... }:
+{ lib, pkgs, currentHost, currentUser, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -122,7 +122,14 @@
 
   documentation = {
     dev.enable = true;
-    man.generateCaches = true;
     nixos.includeAllModules = true;
   };
+
+  # Setting this to true slows down nixos-rebuild too much.
+  # To make apropos usable, run:
+  #
+  #   sudo mkdir -p /var/cache/man/nixos
+  #   sudo mandb
+  #
+  documentation.man.generateCaches = lib.mkForce false;
 }
