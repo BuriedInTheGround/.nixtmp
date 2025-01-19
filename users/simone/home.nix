@@ -247,15 +247,6 @@ in {
         cat "$@" | command less
       }
 
-      function man() {
-        local cols=$(tput cols || echo $\{COLUMNS:-80\})
-        if [[ $cols -gt 100 ]]; then
-          MANWIDTH=100 command man "$@"
-        else
-          MANWIDTH="$\{cols\}" command man "$@"
-        fi
-      }
-
       source <(command fx --init)
 
       [[ ! -f "$ZDOTDIR/.p10k.zsh" ]] || source "$ZDOTDIR/.p10k.zsh"
