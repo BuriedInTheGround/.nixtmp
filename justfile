@@ -60,13 +60,19 @@ changes:
         printf '%s' "$diff"
     fi
 
-
 # Remove all system and user generations older than 90 days.
 [confirm('This will DELETE all system and user generations older than 90 days. Do you want to continue?')]
 [group('maintenance')]
 @gc:
     sudo nix-collect-garbage --delete-older-than 90d
     nix-collect-garbage --delete-older-than 90d
+
+# Remove all system and user generations older than 45 days.
+[confirm('This will DELETE all system and user generations older than 45 days. Do you want to continue?')]
+[group('maintenance')]
+@gc-more:
+    sudo nix-collect-garbage --delete-older-than 45d
+    nix-collect-garbage --delete-older-than 45d
 
 # ┌┬─────────────────────────┐
 # ││ Development recipes     │
