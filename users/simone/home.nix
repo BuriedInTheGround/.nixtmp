@@ -924,6 +924,7 @@ in {
       rules = {
         "Qalculate-gtk".state = "floating";
       };
+      startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
     };
 
     firefox = {
