@@ -19,6 +19,7 @@ in {
     pkgs.anki-bin # Spaced repetition flashcards.
     pkgs.bunnyfetch # Simple system info fetch utility.
     pkgs.chafa # Terminal graphics.
+    pkgs.charm-freeze # Generate images of code and terminal output.
     pkgs.doggo # DNS client.
     pkgs.dust # Intuitive disk usage.
     pkgs.felix-fm # File manager.
@@ -40,7 +41,6 @@ in {
     pkgs.systemctl-tui # Interact with systemd services.
     pkgs.telegram-desktop # Telegram messenger.
     pkgs.tree # Tree view of directories.
-    pkgs.typst # Markup-based typesetting system.
     pkgs.tz # Time zone helper.
     (pkgs.parallel-full.override { # Execute jobs in parallel.
       willCite = true;
@@ -56,32 +56,17 @@ in {
     pkgs.asm-lsp
     pkgs.nodePackages.bash-language-server
     pkgs.clang-tools
-    pkgs.gopls
     pkgs.lua-language-server
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ltex-ls-plus
     pkgs.marksman
     pkgs.nil
-    pkgs.pyright
-    pkgs.rust-analyzer
     pkgs.tailwindcss-language-server
-    pkgs.typst-lsp
     pkgs.vscode-langservers-extracted
     pkgs.yaml-language-server
 
     # Formatters.
-    pkgs.gofumpt
     pkgs.nixfmt-rfc-style
-    pkgs.ruff
-    pkgs.rustfmt
     pkgs.stylua
-    pkgs.typstyle
-
-    # Misc tools.
-    pkgs.charm-freeze
-    pkgs.gotools
-    pkgs.nodejs
-    pkgs.python3 # NOTE: Also required for fastfetch shell completion.
-    pkgs.tree-sitter
   ];
 
   home.sessionPath = [
