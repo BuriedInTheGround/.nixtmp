@@ -61,6 +61,7 @@ in {
     pkgs.marksman
     pkgs.nil
     pkgs.tailwindcss-language-server
+    pkgs.typescript-language-server
     pkgs.vscode-langservers-extracted
     pkgs.yaml-language-server
 
