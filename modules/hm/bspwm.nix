@@ -271,7 +271,7 @@ in {
         "super + g" = "bspc node -s biggest.window";
 
         # Set the window state: tiled, pseudo_tiled, floating, fullscreen.
-        "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}"; 
+        "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
 
         # Set the node flags: marked, locked, sticky, private.
         "super + ctrl + {m,x,y,z}" = "bspc node -g {marked,locked,sticky,private}";
@@ -283,7 +283,7 @@ in {
         "super + {p,b,comma,period}" = "bspc node -f @{parent,brother,first,second}";
 
         # Focus the next/previous window in the current desktop.
-        "super + {_,shift + }c" = "bspc node -f {next,prev}.local.!hidden.window"; 
+        "super + {_,shift + }c" = "bspc node -f {next,prev}.local.!hidden.window";
 
         # Focus the next/previous desktop (current monitor or globally).
         "super + bracket{left,right}{_, + shift}" = "bspc desktop -f {prev,next}{.local,_}";
@@ -310,7 +310,7 @@ in {
         "super + ctrl + shift + space" = "bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel";
 
         # Rotate the tree nodes of the focused desktop.
-        "super + shift + {d,a}" = "bspc node @/ -C {forward,backward}"; 
+        "super + shift + {d,a}" = "bspc node @/ -C {forward,backward}";
 
         # Expand a window by moving one of its sides outward.
         "super + alt + {h,j,k,l}" = "bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}";
