@@ -239,8 +239,13 @@ in {
       zle -N fancy_ctrl_z
       bindkey '^Z' fancy_ctrl_z
 
-      function less() {
-        cat "$@" | command less
+      function ow() {
+        local cols=$(tput cols || echo $\{COLUMNS:-80\})
+        if [[ $cols -gt 100 ]]; then
+          cat $@ | olivetti | eval "$PAGER"
+        else
+          cat $@ | eval "$PAGER"
+        fi
       }
 
       source <(command fx --init)
