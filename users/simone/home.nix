@@ -115,6 +115,15 @@ in {
   xdg.enable = true;
   xdg.userDirs.enable = true;
 
+  # Enable XDG desktop integration.
+  xdg.portal = {
+    enable = true;
+    config = {
+      common.default = [ "gtk" ];
+    };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   # Apply the theme to GTK apps.
   gtk = {
     enable = true;

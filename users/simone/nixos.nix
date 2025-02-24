@@ -22,10 +22,15 @@
     enableCompletion = false;
   };
 
-  # This is necessary to get completion for system packages. Since
-  # programs.zsh.enableCompletion is set to false, this is not set
-  # automatically.
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = [
+    # This is necessary to get completion for system packages. Since
+    # programs.zsh.enableCompletion is set to false, this is not set
+    # automatically.
+    "/share/zsh"
+
+    # This is necessary for the XDG desktop integration to work properly.
+    "/share/xdg-desktop-portal" "/share/applications"
+  ];
 
   # We enable the dconf configuration system. This is necessary for the
   # GSettings options to be applied correctly.
