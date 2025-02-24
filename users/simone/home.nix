@@ -41,7 +41,6 @@ in {
     pkgs.ripgrep-all # Search with ripgrep in pdf, docx, sqlite, and more.
     pkgs.simplescreenrecorder # Screen recorder.
     pkgs.systemctl-tui # Interact with systemd services.
-    pkgs.telegram-desktop # Telegram messenger.
     pkgs.tree # Tree view of directories.
     pkgs.tz # Time zone helper.
     (pkgs.parallel-full.override { # Execute jobs in parallel.
@@ -1029,6 +1028,9 @@ in {
         # Standard Notes
         "https://app.standardnotes.com"
 
+        # Telegram
+        "https://web.telegram.org"
+
         # tldraw
         "https://www.tldraw.com"
 
@@ -1065,6 +1067,7 @@ in {
             { name = "Notesnook"; url = "https://app.notesnook.com/"; }
             { name = "Spotify"; url = "https://open.spotify.com/"; }
             { name = "Syncthing"; url = "http://127.0.0.1:8384/"; }
+            { name = "Telegram"; url = "https://web.telegram.org/"; }
             { name = "Thesaurus"; url = "https://www.thesaurus.com/"; }
             { name = "tldraw"; url = "https://www.tldraw.com/"; }
             { name = "Translate"; url = "https://translate.google.com/"; }
@@ -1373,6 +1376,7 @@ in {
         autocmd DocStart mail.google.com mode ignore
         autocmd DocStart math.preview.excalidraw.com mode ignore
         autocmd DocStart open.spotify.com mode ignore
+        autocmd DocStart web.telegram.org mode ignore
         autocmd DocStart web.whatsapp.com mode ignore
         autocmd DocStart www.duolingo.com mode ignore
         autocmd DocStart www.geogebra.org mode ignore
