@@ -29,7 +29,7 @@ in {
     pkgs.hyperfine # Benchmarking tool.
     pkgs.imagemagick # Raster images tools.
     pkgs.inkscape # Vector graphics editor.
-    pkgs.mergiraf # Syntax-aware git merge driver.
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.mergiraf # Syntax-aware git merge driver.
     pkgs.minder # Mind-mapping tool.
     pkgs.mpc-cli # CLI for MPD.
     pkgs.okular # Document viewer.
