@@ -178,7 +178,7 @@ in {
       share = true;
     };
     initExtraFirst = ''
-      hash bunnyfetch 2>/dev/null && bunnyfetch
+      hash bunnyfetch 2>/dev/null && ANSI_COLOR=32 bunnyfetch
 
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
