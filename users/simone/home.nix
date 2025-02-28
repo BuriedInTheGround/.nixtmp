@@ -881,7 +881,7 @@ in {
         primary = {
           foreground = "${perpetua.text0}";
           background = "${perpetua.base0}";
-          dim_foreground = "${perpetua.text0}";
+          dim_foreground = "${perpetua.text2}";
           bright_foreground = "${perpetua.text0}";
         };
         cursor = {
@@ -909,7 +909,7 @@ in {
           };
           end = {
             foreground = "${perpetua.base0}";
-            background = "${perpetua.text2}";
+            background = "${perpetua.text1}";
           };
         };
         footer_bar = {
@@ -931,24 +931,14 @@ in {
           white = "${perpetua.text0}";
         };
         bright = {
-          black = "${perpetua.base4}";
+          black = "${perpetua.base3}";
           red = "${perpetua.red}";
           green = "${perpetua.green}";
           yellow = "${perpetua.yellow}";
           blue = "${perpetua.blue}";
           magenta = "${perpetua.pink}";
           cyan = "${perpetua.cyan}";
-          white = "${perpetua.text0}";
-        };
-        dim = {
-          black = "${perpetua.base2}";
-          red = "${perpetua.red}";
-          green = "${perpetua.green}";
-          yellow = "${perpetua.yellow}";
-          blue = "${perpetua.blue}";
-          magenta = "${perpetua.pink}";
-          cyan = "${perpetua.cyan}";
-          white = "${perpetua.text0}";
+          white = "${perpetua.text1}";
         };
       };
       extraHints = [
