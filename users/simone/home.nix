@@ -1190,6 +1190,8 @@ in {
           name = "Research";
           bookmarks = [
             { name = "Google Scholar"; url = "https://scholar.google.com/"; }
+            { name = "Internet Archive"; url = "https://archive.org/"; }
+            { name = "Internet Archive Scholar"; url = "https://scholar.archive.org/"; }
             { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
             { name = "Six Degrees of Wikipedia"; url = "https://www.sixdegreesofwikipedia.com/"; }
           ];
@@ -1296,6 +1298,7 @@ in {
             { name = "Detexify"; url = "https://detexify.kirelabs.org/"; }
             { name = "Devhints"; url = "https://devhints.io/"; }
             { name = "Diátaxis"; url = "https://diataxis.fr/"; }
+            { name = "Dictionary of Algorithms and Data Structures"; url = "https://xlinux.nist.gov/dads/"; }
             { name = "Discord"; url = "https://discord.com/channels/@me"; }
             { name = "Dizionario Etimologico"; url = "https://etimo.it/"; }
             { name = "Duolingo"; url = "https://www.duolingo.com/learn"; }
