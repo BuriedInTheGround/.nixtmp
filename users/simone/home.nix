@@ -1314,6 +1314,7 @@ in {
             { name = "Generatore di Anagrammi"; url = "https://www.generatorediparole.it/anagramma"; }
             { name = "Gernot's List of Systems Benchmarking Crimes"; url = "https://gernot-heiser.org/benchmarking-crimes.html"; }
             { name = "Ghostty"; url = "https://ghostty.org/"; }
+            { name = "GitHub Gist"; url = "https://gist.github.com/"; }
             { name = "GitLab"; url = "https://gitlab.com/"; }
             { name = "Google Style Guides"; url = "https://google.github.io/styleguide/"; }
             { name = "HHKB"; url = "https://hhkeyboard.us/"; }
