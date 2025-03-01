@@ -12,15 +12,15 @@ alias help := list
 # ││ Deploy recipes          │
 # └┴─────────────────────────┘
 
-# Build and activate the new configuration.
+# Build the new configuration and make it the boot default.
 [group('deploy')]
-@deploy:
-    nixos-rebuild switch --flake . --use-remote-sudo
+@deploy host=shell('hostname'):
+    nix flake check && nixos-rebuild boot --flake .#{{host}} --use-remote-sudo
 
 # Debug mode for the deploy recipe.
 [group('deploy')]
-@debug:
-    nixos-rebuild switch --flake . --use-remote-sudo --no-eval-cache --show-trace --print-build-logs --verbose
+@debug host=shell('hostname'):
+    nix flake check && nixos-rebuild boot --flake .#{{host}} --use-remote-sudo --no-eval-cache --show-trace --print-build-logs --verbose
 
 # ┌┬─────────────────────────┐
 # ││ Update recipes          │
@@ -85,5 +85,5 @@ changes:
 
 # Build and run the configuration of the selected host inside a VM.
 [group('develop')]
-@vm host:
-    nixos-rebuild build-vm --flake .#{{host}} && ./result/bin/run-{{host}}-vm
+@vm host=shell('hostname'):
+    nix flake check && nixos-rebuild build-vm --flake .#{{host}} --use-remote-sudo && ./result/bin/run-{{host}}-vm
