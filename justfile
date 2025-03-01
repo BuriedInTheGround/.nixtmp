@@ -83,7 +83,17 @@ changes:
 @repl:
   nix repl -f flake:nixpkgs
 
+# Build and preview the activation changes for the configuration of the selected host.
+[group('develop')]
+@preview host=shell('hostname'):
+    nix flake check && nixos-rebuild dry-activate --flake .#{{host}} --use-remote-sudo
+
 # Build and run the configuration of the selected host inside a VM.
 [group('develop')]
 @vm host=shell('hostname'):
     nix flake check && nixos-rebuild build-vm --flake .#{{host}} --use-remote-sudo && ./result/bin/run-{{host}}-vm
+
+# Build and activate the configuration of the selected host without creating a new boot entry.
+[group('develop')]
+@test host=shell('hostname'):
+    nix flake check && nixos-rebuild test --flake .#{{host}} --use-remote-sudo
