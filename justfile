@@ -12,7 +12,7 @@ alias help := list
 # ││ Deploy recipes          │
 # └┴─────────────────────────┘
 
-# Build the new configuration and make it the boot default.
+# Build the configuration of the selected host and make it the boot default.
 [group('deploy')]
 @deploy host=shell('hostname'):
     nix flake check && nixos-rebuild boot --flake .#{{host}} --use-remote-sudo
