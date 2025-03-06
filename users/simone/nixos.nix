@@ -1,6 +1,9 @@
 { lib, pkgs, currentHost, currentUser, ... }:
 
 {
+  # Unfortunately, Chromium is unfree.
+  nixpkgs.config.allowUnfree = true;
+
   # We configure the Android Debug Bridge (adb) to work with Android devices.
   programs.adb.enable = true;
 
@@ -20,6 +23,12 @@
     # Since we handle Zsh completion in home.nix via home-manager, we set this
     # to false to avoid calling compinit multiple times.
     enableCompletion = false;
+  };
+
+  # This is necessary for Chrome Enterprise policies to be applied.
+  environment.etc."chromium/policies" = {
+    source = "/home/${currentUser}/.config/chromium/policies";
+    mode = "symlink";
   };
 
   environment.pathsToLink = [

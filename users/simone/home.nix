@@ -970,6 +970,96 @@ in {
       startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
     };
 
+    chromium = {
+      enable = true;
+      allowedCookies = [
+        # Bitwarden
+        "https://[*.]bitwarden.com"
+        # Bluesky
+        "https://bsky.app"
+        # Duolingo
+        "https://www.duolingo.com"
+        # Excalidraw
+        "https://[*.]excalidraw.com"
+        # Fastmail
+        "https://[*.]fastmail.com"
+        # GitHub
+        "https://[*.]github.com"
+        # Google
+        "https://[*.]google.com"
+        "https://www.youtube.com"
+        # Netflix
+        "https://www.netflix.com"
+        # Proton
+        "https://[*.]proton.me"
+        # Telegram
+        "https://web.telegram.org"
+        # tldraw
+        "https://www.tldraw.com"
+        # UniPD
+        "https://[*.]unipd.it"
+        # WhatsApp
+        "https://web.whatsapp.com"
+      ];
+      extensions = [
+        # Bitwarden Password Manager
+        {
+          id = "nngceckbapebfimnlniiiahkandclblb";
+          hash = "sha256-dzw9WHFayRAOi/RbezqRXEKtve3gxcN0kOAvUhXXW+8=";
+          version = "2025.2.1";
+        }
+        # Dark Reader
+        {
+          id = "eimadpbcbfnmbkopoojfekhnkhdbieeh";
+          hash = "sha256-YmcbHJ5/CNBeaOui3jx8bmMEH3waocQPPQ94YEQVNHU=";
+          version = "4.9.103";
+        }
+        # LanguageTool
+        {
+          id = "oldceeleldhonbafppcapldpdifcinji";
+          hash = "sha256-CzfPSDYCMGcfS9dV0VH20b+cb+jQKGYbNHy3smSvG7E=";
+          version = "8.18.2";
+        }
+        # Markdown Viewer
+        {
+          id = "ckkdlimhmcjmikdlpkmbgfkaikojcbjk";
+          hash = "sha256-f0m9VUbymI1wWmGasxR2i8XgU+LyNUyTHszYrquD6FE=";
+          version = "5.3";
+        }
+        # Privacy Badger
+        {
+          id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp";
+          hash = "sha256-8NNRBjSxMwZKN+MUyEx/Lqf6mv1COyVwXPy+QNYhX24=";
+          version = "2025.1.29";
+        }
+        # Refined GitHub
+        {
+          id = "hlepfoohegkhhmjieoechaddaejaokhf";
+          hash = "sha256-D2J3dzrdf+YQAzIn9chRvuRWzekr3STQ0dVkhzgwoAQ=";
+          version = "25.2.26";
+        }
+        # Return YouTube Dislike
+        {
+          id = "gebbhagfogifgggkldgodflihgfeippi";
+          hash = "sha256-V6vZHcLZ2yFe0Mhlm91fky5CB8KEDcV4BqW7zHlRPmY=";
+          version = "3.0.0.18";
+        }
+        # uBlock Origin
+        {
+          id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";
+          hash = "sha256-lAJcYnfvnpVoyS8tQ2TGstmFA6PCu/4ySyZZcZSdlnk=";
+          version = "1.62.0";
+        }
+        # Vimium
+        {
+          id = "dbepggeogbaibhgnhhndojpepiihcmeb";
+          hash = "sha256-DaEM1NyMX8RMBvWoIVOhmfY/ae66HCNfRFnwAuLUHVU=";
+          version = "2.1.2";
+        }
+      ];
+      defaultSearchProvider = "DuckDuckGo";
+    };
+
     firefox = {
       enable = true;
       supportTridactyl = true;
