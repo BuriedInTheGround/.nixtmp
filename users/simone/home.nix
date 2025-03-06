@@ -1355,6 +1355,7 @@ in {
             { name = "Special Publication 811 | NIST"; url = "https://www.nist.gov/pml/special-publication-811"; }
             { name = "Stack Exchange"; url = "https://stackexchange.com/sites"; }
             { name = "Standard Notes"; url = "https://app.standardnotes.com/"; }
+            { name = "SVG Repo"; url = "https://www.svgrepo.com/"; }
             { name = "SVG Viewer"; url = "https://www.svgviewer.dev/"; }
             { name = "The Official U.S. Time | NIST"; url = "https://www.time.gov/"; }
             { name = "Time.is"; url = "https://time.is/"; }
