@@ -272,7 +272,7 @@ in {
       enable = true;
       package = pkgs.firefox.override {
         nativeMessagingHosts = optional cfg.supportTridactyl pkgs.tridactyl-native;
-        # NOTE: Updated on Firefox v128 (see https://mozilla.github.io/policy-templates/).
+        # NOTE: Updated for Firefox v128 (see https://mozilla.github.io/policy-templates/).
         extraPolicies = {
           AutofillAddressEnabled = false;
           AutofillCreditCardEnabled = false;
@@ -309,7 +309,9 @@ in {
         extensions = cfg.extensions;
         extraConfig = mkUserJs {
           prefs = cfg.settings;
-          # NOTE: Updated with arkenfox v128.
+          # NOTE: Updated with arkenfox v128 (see https://github.com/arkenfox/user.js/releases).
+          # Refer to https://nur.nix-community.org/repos/ataraxiasjel/ for the latest available version.
+          # The interactive current release can be found at https://arkenfox.github.io/gui/.
           arkenfoxOverridePrefs = {
             # Allow Firefox to verify the safety of certain executables by
             # sending some information to the Google Safe Browsing service.
