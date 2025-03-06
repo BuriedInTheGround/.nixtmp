@@ -112,6 +112,64 @@ in {
   xdg.enable = true;
   xdg.userDirs.enable = true;
 
+  # Add some missing desktop entries.
+  xdg.desktopEntries = {
+    felix = {
+      exec = "fx %f";
+      genericName = "File Manager";
+      name = "felix";
+    };
+  };
+
+  # Set some default applications.
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      # Browser
+      "application/rdf+xml" = "chromium-browser.desktop";
+      "application/rss+xml" = "chromium-browser.desktop";
+      "application/xhtml+xml" = "chromium-browser.desktop";
+      "application/xhtml_xml" = "chromium-browser.desktop";
+      "application/xml" = "chromium-browser.desktop";
+      "text/html" = "chromium-browser.desktop";
+      "text/xml" = "chromium-browser.desktop";
+      "x-scheme-handler/about" = "chromium-browser.desktop";
+      "x-scheme-handler/chrome" = "chromium-browser.desktop";
+      "x-scheme-handler/ftp" = "chromium-browser.desktop";
+      "x-scheme-handler/http" = "chromium-browser.desktop";
+      "x-scheme-handler/https" = "chromium-browser.desktop";
+      "x-scheme-handler/mailto" = "chromium-browser.desktop";
+      "x-scheme-handler/unknown" = "chromium-browser.desktop";
+      "x-scheme-handler/webcal" = "chromium-browser.desktop";
+
+      # File manager
+      "inode/directory" = "felix.desktop";
+
+      # Image viewer
+      "image/bmp" = "feh.desktop";
+      "image/gif" = "feh.desktop";
+      "image/heic" = "feh.desktop";
+      "image/jpeg" = "feh.desktop";
+      "image/jpg" = "feh.desktop";
+      "image/pjpeg" = "feh.desktop";
+      "image/png" = "feh.desktop";
+      "image/tiff" = "feh.desktop";
+      "image/webp" = "feh.desktop";
+      "image/x-bmp" = "feh.desktop";
+      "image/x-pcx" = "feh.desktop";
+      "image/x-png" = "feh.desktop";
+      "image/x-portable-anymap" = "feh.desktop";
+      "image/x-portable-bitmap" = "feh.desktop";
+      "image/x-portable-graymap" = "feh.desktop";
+      "image/x-portable-pixmap" = "feh.desktop";
+      "image/x-tga" = "feh.desktop";
+      "image/x-xbitmap" = "feh.desktop";
+
+      # PDF viewer
+      "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+    };
+  };
+
   # Enable XDG desktop integration.
   xdg.portal = {
     enable = true;
