@@ -47,9 +47,6 @@ in {
       willCite = true;
     })
 
-    # Note-taking application.
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.notesnook
-
     # Neovim nightly.
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
 
@@ -1021,9 +1018,6 @@ in {
         # Netflix
         "https://www.netflix.com"
 
-        # Notesnook
-        "https://app.notesnook.com"
-
         # Proton
         "https://account.proton.me"
         "https://calendar.proton.me"
@@ -1068,7 +1062,6 @@ in {
             { name = "Grammarly"; url = "https://app.grammarly.com/"; }
             { name = "Netflix"; url = "https://www.netflix.com/"; }
             { name = "NixOS"; url = "https://nixos.org/"; }
-            { name = "Notesnook"; url = "https://app.notesnook.com/"; }
             { name = "Spotify"; url = "https://open.spotify.com/"; }
             { name = "Syncthing"; url = "http://127.0.0.1:8384/"; }
             { name = "Telegram"; url = "https://web.telegram.org/"; }
@@ -1405,7 +1398,6 @@ in {
 
         " Ignore Tridactyl on some websites.
         autocmd DocStart app.grammarly.com mode ignore
-        autocmd DocStart app.notesnook.com mode ignore
         autocmd DocStart app.standardnotes.com mode ignore
         autocmd DocStart excalidraw.com mode ignore
         autocmd DocStart mail.google.com mode ignore
