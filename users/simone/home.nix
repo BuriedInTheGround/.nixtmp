@@ -1087,8 +1087,8 @@ in {
         # Privacy Badger
         {
           id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp";
-          hash = "sha256-8NNRBjSxMwZKN+MUyEx/Lqf6mv1COyVwXPy+QNYhX24=";
-          version = "2025.1.29";
+          hash = "sha256-gDssatIKJL/0eSDiH/+1/IKRTddRmRGNusiu+DfkDrU=";
+          version = "2025.3.3";
         }
         # Refined GitHub
         {
