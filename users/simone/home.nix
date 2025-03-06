@@ -1059,7 +1059,6 @@ in {
             { name = "Fastmail"; url = "https://app.fastmail.com/"; }
             { name = "GitHub"; url = "https://github.com/"; }
             { name = "Gmail"; url = "https://mail.google.com/"; }
-            { name = "Grammarly"; url = "https://app.grammarly.com/"; }
             { name = "Netflix"; url = "https://www.netflix.com/"; }
             { name = "NixOS"; url = "https://nixos.org/"; }
             { name = "Spotify"; url = "https://open.spotify.com/"; }
@@ -1310,6 +1309,7 @@ in {
             { name = "GitHub Gist"; url = "https://gist.github.com/"; }
             { name = "GitLab"; url = "https://gitlab.com/"; }
             { name = "Google Style Guides"; url = "https://google.github.io/styleguide/"; }
+            { name = "Grammarly"; url = "https://app.grammarly.com/"; }
             { name = "HHKB"; url = "https://hhkeyboard.us/"; }
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "ICANN Lookup"; url = "https://lookup.icann.org/"; }
