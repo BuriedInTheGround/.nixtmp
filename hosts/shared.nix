@@ -1,4 +1,4 @@
-{ lib, pkgs, currentHost, currentUser, ... }:
+{ options, lib, pkgs, currentHost, currentUser, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -32,7 +32,22 @@
       "1.1.1.1"
       "1.0.0.1"
     ];
+
+    timeServers = options.networking.timeServers.default ++ [
+      # Apple
+      "time.apple.com"
+
+      # Cloudflare
+      "time.cloudflare.com"
+
+      # Istituto nazionale di ricerca metrologica
+      "ntp1.inrim.it"
+      "ntp2.inrim.it"
+    ];
   };
+
+  # Use a Rust implementation of NTP.
+  services.ntpd-rs.enable = true;
 
   # Use the systemd-resolved DNS resolver.
   services.resolved = {
