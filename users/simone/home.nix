@@ -43,6 +43,7 @@ in {
     pkgs.systemctl-tui # Interact with systemd services.
     pkgs.tree # Tree view of directories.
     pkgs.tz # Time zone helper.
+    pkgs.xcolor # Color picker.
     (pkgs.parallel-full.override { # Execute jobs in parallel.
       willCite = true;
     })
