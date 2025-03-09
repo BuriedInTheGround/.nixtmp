@@ -1283,7 +1283,9 @@ in {
             { name = "CyberChef"; url = "https://gchq.github.io/CyberChef/"; }
             { name = "HackTricks"; url = "https://book.hacktricks.xyz/"; }
             { name = "pwn.college"; url = "https://pwn.college/"; }
+            { name = "Shellcodes database"; url = "https://shell-storm.org/shellcode/index.html"; }
             { name = "Web Security Academy - PortSwigger"; url = "https://portswigger.net/web-security/all-topics"; }
+            { name = "x86 / x64 Assembler and Disassembler"; url = "https://defuse.ca/online-x86-assembler.htm"; }
           ];
         }
         {
