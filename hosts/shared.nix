@@ -117,6 +117,10 @@
 
   services.displayManager.defaultSession = "none+bspwm";
 
+  # Use GrapheneOS hardened memory allocator for better security.
+  # To reduce the possibility of breakage, the light variant is selected.
+  environment.memoryAllocator.provider = "graphene-hardened-light";
+
   environment.systemPackages = with pkgs; [
     file
     gcc
