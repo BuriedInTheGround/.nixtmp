@@ -65,7 +65,9 @@
 
     nixosConfigurations.kokoromi = mkSystem "kokoromi" {
       extraModules = [
-        inputs.nixos-hardware.nixosModules.common-gpu-intel
+        inputs.nixos-hardware.nixosModules.common-cpu-intel
+        inputs.nixos-hardware.nixosModules.common-pc-laptop
+        inputs.nixos-hardware.nixosModules.common-pc-ssd
       ];
       user = "simone";
     };
