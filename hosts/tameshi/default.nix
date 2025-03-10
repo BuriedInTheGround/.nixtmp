@@ -55,21 +55,21 @@
 
   # TODO: Remove.
   virtualisation.vmVariant = {
-      boot.loader.timeout = 0;
-      virtualisation = {
-        cores = 2;
-        memorySize = 4096;
-        resolution = {
-          x = 1920;
-          y = 1080;
-        };
-        sharedDirectories = {
-          share = {
-            source = "/home/simone/tmp";
-            target = "/mnt/shared";
-          };
+    boot.loader.timeout = 0;
+    virtualisation = {
+      cores = 2;
+      memorySize = 4096;
+      resolution = {
+        x = 1920;
+        y = 1080;
+      };
+      sharedDirectories = {
+        share = {
+          source = "/home/simone/tmp";
+          target = "/mnt/shared";
         };
       };
+    };
   };
 
   environment.systemPackages = [
