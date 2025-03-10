@@ -714,6 +714,13 @@ in {
     inactiveInterval = 5; # In minutes.
   };
 
+  # Lightweight compositor for X11.
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+  };
+
   # Highly customizable status bar.
   services.polybar = {
     enable = true;
@@ -916,9 +923,6 @@ in {
 
   # Control media players via bluetooth.
   services.mpris-proxy.enable = true;
-
-  # Lightweight compositor for X11.
-  services.picom.enable = true;
 
   # CLI utility to control MPRIS compliant media players.
   services.playerctld.enable = true;
