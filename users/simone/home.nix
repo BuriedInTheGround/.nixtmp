@@ -3,7 +3,7 @@
 let
   theme = "dark";
 
-  perpetua = builtins.mapAttrs (_: p: p.hex) lib.perpetua.${theme};
+  perpetua = builtins.mapAttrs (_: color: color.hex) lib.perpetua.${theme};
 in {
   imports = [
     ../../modules/hm
@@ -77,6 +77,7 @@ in {
     BAT_THEME = "ansi";
     DIRENV_LOG_FORMAT = ""; # Make direnv quiet.
     EDITOR = "nvim";
+    GTK_THEME = (if theme == "dark" then "adw-gtk3-dark" else "adw-gtk3");
     MANWIDTH = 100;
     NIXOS_THEME = theme; # Expose the current system theme for manual use.
     PAGER = "less --tabs 4 --mouse --wheel-lines 4 -RFX";
