@@ -581,6 +581,7 @@ in {
       background-blur = true;
       window-decoration = "server";
       window-theme = "ghostty";
+      gtk-single-instance = true;
       keybind = [
         "ctrl+shift+o=unbind"
         "ctrl+alt+h=new_split:left"
