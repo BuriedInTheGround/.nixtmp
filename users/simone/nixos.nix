@@ -80,6 +80,7 @@
       pkgs.fira-sans
       pkgs.ibm-plex
       pkgs.inter
+      pkgs.jetbrains-mono
       pkgs.libertine
       pkgs.libre-baskerville
       pkgs.merriweather
@@ -89,6 +90,7 @@
       pkgs.noto-fonts
       pkgs.noto-fonts-color-emoji # Emoji
       pkgs.public-sans # Sans-serif
+      pkgs.source-code-pro
       pkgs.source-sans
       pkgs.source-serif
       pkgs.times-newer-roman # Serif
