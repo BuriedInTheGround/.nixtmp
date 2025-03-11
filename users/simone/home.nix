@@ -567,6 +567,66 @@ in {
     };
   };
 
+  # Fast, feature-rich, and native terminal emulator.
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      font-family = "monospace";
+      font-size = 14;
+      theme = "dark:perpetua-dark,light:perpetua-light";
+      mouse-hide-while-typing = true;
+      background-opacity = 0.95;
+      background-blur = true;
+      window-decoration = "server";
+      window-theme = "ghostty";
+      keybind = [
+        "ctrl+shift+o=unbind"
+        "ctrl+alt+h=new_split:left"
+        "ctrl+alt+j=new_split:down"
+        "ctrl+alt+k=new_split:up"
+        "ctrl+alt+l=new_split:right"
+        "ctrl+shift+h=goto_split:left"
+        "ctrl+shift+j=goto_split:down"
+        "ctrl+shift+k=goto_split:up"
+        "ctrl+shift+l=goto_split:right"
+        "ctrl+shift+e=equalize_splits"
+        "ctrl+shift+w=close_surface"
+      ];
+    };
+    themes = builtins.mapAttrs
+      (_: palette: {
+        background = palette.base0;
+        foreground = palette.text0;
+        selection-foreground = palette.text0;
+        selection-background = palette.base4;
+        palette = [
+          "0=${palette.base2}"
+          "1=${palette.red}"
+          "2=${palette.green}"
+          "3=${palette.yellow}"
+          "4=${palette.blue}"
+          "5=${palette.pink}"
+          "6=${palette.cyan}"
+          "7=${palette.text0}"
+          "8=${palette.base3}"
+          "9=${palette.red}"
+          "10=${palette.green}"
+          "11=${palette.yellow}"
+          "12=${palette.blue}"
+          "13=${palette.pink}"
+          "14=${palette.cyan}"
+          "15=${palette.text1}"
+        ];
+        cursor-color = palette.text0;
+        cursor-text = palette.base0;
+      })
+      {
+        perpetua-dark = builtins.mapAttrs (_: color: color.hex) lib.perpetua.dark;
+        perpetua-light = builtins.mapAttrs (_: color: color.hex) lib.perpetua.light;
+      };
+  };
+
   # Distributed version control system.
   programs.git = {
     enable = true;
@@ -656,7 +716,7 @@ in {
     enable = true;
     font = "monospace 12";
     location = "bottom";
-    terminal = "alacritty";
+    terminal = "ghostty";
     theme = "slim";
     plugins = [ pkgs.rofi-calc ];
     extraConfig = {
@@ -1031,6 +1091,7 @@ in {
         "Qalculate-gtk".state = "floating";
       };
       startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
+      terminalEmulator = "ghostty";
     };
 
     chromium = {
