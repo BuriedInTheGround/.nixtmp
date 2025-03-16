@@ -211,7 +211,7 @@ in {
       type = types.str;
       default = "alacritty";
       description = ''
-        Preferred terminal emulator to launch with the `super + Escape` hotkey.
+        Preferred terminal emulator to launch with the `super + Return` hotkey.
       '';
       example = "urxvt";
     };
