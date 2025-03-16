@@ -100,6 +100,7 @@ in {
     "t"       = "tree";
     "md"      = "mkdir --parents --verbose";
     "rr"      = "rm --recursive";
+    "cat"     = "bat --plain";
     "man"     = "LESSOPEN=\"|- olivetti '%s'\" man";
     "pbcopy"  = "xclip -selection clipboard";
     "pbpaste" = "xclip -selection clipboard -o";
