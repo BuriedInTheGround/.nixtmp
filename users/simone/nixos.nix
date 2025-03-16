@@ -78,11 +78,13 @@
       pkgs.eb-garamond
       pkgs.fira-code
       pkgs.fira-sans
+      pkgs.fraunces
       pkgs.ibm-plex
       pkgs.inter
       pkgs.jetbrains-mono
       pkgs.libertine
       pkgs.libre-baskerville
+      pkgs.libre-franklin
       pkgs.merriweather
       pkgs.mona-sans
       pkgs.monaspace
