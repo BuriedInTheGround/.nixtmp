@@ -95,11 +95,11 @@ in {
     "Q"       = "exit";
     "clr"     = "clear";
     "sudo"    = "sudo "; # Make sudo work with aliases.
-    "cp"      = "cp -i";
-    "mv"      = "mv -i";
+    "cp"      = "cp --interactive";
+    "mv"      = "mv --interactive";
     "t"       = "tree";
-    "md"      = "mkdir -pv";
-    "rr"      = "rm -r";
+    "md"      = "mkdir --parents --verbose";
+    "rr"      = "rm --recursive";
     "man"     = "LESSOPEN=\"|- olivetti '%s'\" man";
     "pbcopy"  = "xclip -selection clipboard";
     "pbpaste" = "xclip -selection clipboard -o";
