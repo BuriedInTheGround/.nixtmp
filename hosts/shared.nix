@@ -124,6 +124,11 @@
   # To reduce the possibility of breakage, the light variant is selected.
   environment.memoryAllocator.provider = "graphene-hardened-light";
 
+  # We enable AppArmor for enhanced access control.
+  security.apparmor.enable = true;
+  security.apparmor.killUnconfinedConfinables = true;
+  services.dbus.apparmor = "enabled";
+
   environment.systemPackages = with pkgs; [
     file
     gcc
