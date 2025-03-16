@@ -7,6 +7,9 @@
   # We have to explicitly enable this because of the hardened Linux kernel.
   security.chromiumSuidSandbox.enable = true;
 
+  # This is required for the Syncthing and Flameshot services to work.
+  security.unprivilegedUsernsClone = true;
+
   # We configure the Android Debug Bridge (adb) to work with Android devices.
   programs.adb.enable = true;
 
