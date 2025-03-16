@@ -124,6 +124,9 @@
   # To reduce the possibility of breakage, the light variant is selected.
   environment.memoryAllocator.provider = "graphene-hardened-light";
 
+  # We use a memory-safe implementation of the sudo command.
+  security.sudo-rs.enable = true;
+
   # We enable AppArmor for enhanced access control.
   security.apparmor.enable = true;
   security.apparmor.killUnconfinedConfinables = true;
