@@ -803,7 +803,7 @@ in {
         foreground = perpetua.text0;
         primary = perpetua.yellow;
         secondary = perpetua.cyan;
-        alert = perpetua.red;
+        alert = perpetua.red_back;
         disabled = perpetua.over1;
       };
       "bar/bar" = {
