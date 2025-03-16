@@ -578,22 +578,22 @@ in {
       theme = "dark:perpetua-dark,light:perpetua-light";
       mouse-hide-while-typing = true;
       background-opacity = 0.95;
-      background-blur = true;
       window-decoration = "server";
       window-theme = "ghostty";
       gtk-single-instance = true;
       keybind = [
-        "ctrl+shift+o=unbind"
-        "ctrl+alt+h=new_split:left"
-        "ctrl+alt+j=new_split:down"
-        "ctrl+alt+k=new_split:up"
-        "ctrl+alt+l=new_split:right"
-        "ctrl+shift+h=goto_split:left"
-        "ctrl+shift+j=goto_split:down"
-        "ctrl+shift+k=goto_split:up"
-        "ctrl+shift+l=goto_split:right"
         "ctrl+shift+e=equalize_splits"
-        "ctrl+shift+w=close_surface"
+        "ctrl+shift+o=unbind"
+        # new window panes
+        "ctrl+shift+k=new_split:up"
+        "ctrl+shift+j=new_split:down"
+        "ctrl+shift+l=new_split:right"
+        "ctrl+shift+h=new_split:left"
+        # moving between panes
+        "ctrl+alt+h=goto_split:left"
+        "ctrl+alt+j=goto_split:down"
+        "ctrl+alt+k=goto_split:up"
+        "ctrl+alt+l=goto_split:right"
       ];
     };
     themes = builtins.mapAttrs
