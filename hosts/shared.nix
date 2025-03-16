@@ -129,6 +129,9 @@
   security.apparmor.killUnconfinedConfinables = true;
   services.dbus.apparmor = "enabled";
 
+  # We use dbus-broker for high performance and reliability.
+  services.dbus.implementation = "broker";
+
   environment.systemPackages = with pkgs; [
     file
     gcc
