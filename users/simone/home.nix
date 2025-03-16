@@ -718,7 +718,7 @@ in {
     enable = true;
     font = "monospace 12";
     location = "bottom";
-    terminal = "ghostty";
+    terminal = "alacritty";
     theme = "slim";
     plugins = [ pkgs.rofi-calc ];
     extraConfig = {
@@ -1093,7 +1093,6 @@ in {
         "Qalculate-gtk".state = "floating";
       };
       startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
-      terminalEmulator = "ghostty";
     };
 
     chromium = {
