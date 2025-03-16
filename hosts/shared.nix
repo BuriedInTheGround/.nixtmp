@@ -1,7 +1,9 @@
 { options, lib, pkgs, currentHost, currentUser, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
+  security.lockKernelModules = true;
+  security.protectKernelImage = true;
 
   # We enable redistributable firmware for better hardware compatibility.
   hardware.enableRedistributableFirmware = true;
@@ -12,6 +14,7 @@
     package = pkgs.nixVersions.latest;
 
     settings = {
+      allowed-users = [ "@users" ];
       auto-optimise-store = true;
       experimental-features = "nix-command flakes";
       keep-derivations = true;

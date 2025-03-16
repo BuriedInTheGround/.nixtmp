@@ -4,6 +4,9 @@
   # Unfortunately, Chromium is unfree.
   nixpkgs.config.allowUnfree = true;
 
+  # We have to explicitly enable this because of the hardened Linux kernel.
+  security.chromiumSuidSandbox.enable = true;
+
   # We configure the Android Debug Bridge (adb) to work with Android devices.
   programs.adb.enable = true;
 
