@@ -1316,6 +1316,7 @@ in {
             { name = "Interactive color picker comparison (Oklch, Okhsv, Okhsl, Hsluv)"; url = "https://bottosson.github.io/misc/colorpicker/"; }
             { name = "Large list of handpicked color names"; url = "https://meodai.github.io/color-names/"; }
             { name = "RAL Farben"; url = "https://www.ral-farben.de/"; }
+            { name = "The Dimensions of Colour, modern colour theory"; url = "http://www.huevaluechroma.com/"; }
           ];
         }
         {
@@ -1454,6 +1455,7 @@ in {
           bookmarks = [
             { name = "Didattica - Cybersecurity"; url = "https://it.didattica.unipd.it/off/2023/LM/SC/SC2542/000ZZ"; }
             { name = "Macroarea STEM"; url = "https://stem.elearning.unipd.it/"; }
+            { name = "The illustrated guide to a Ph.D."; url = "https://matt.might.net/articles/phd-school-in-pictures/"; }
             { name = "Università di Padova"; url = "https://www.unipd.it/"; }
           ];
         }
@@ -1494,6 +1496,7 @@ in {
             { name = "arkenfox gui"; url = "https://arkenfox.github.io/gui/"; }
             { name = "Benjamin Keep"; url = "https://www.benjaminkeep.com/"; }
             { name = "Bionic Reading"; url = "https://app.bionic-reading.com/"; }
+            { name = "Bluesky Embed"; url = "https://embed.bsky.app/"; }
             { name = "C data types - Wikipedia"; url = "https://en.wikipedia.org/wiki/C_data_types"; }
             { name = "Choose a License"; url = "https://choosealicense.com/"; }
             { name = "cobalt"; url = "https://cobalt.tools/"; }
@@ -1517,6 +1520,7 @@ in {
             { name = "Every Time Zone"; url = "https://everytimezone.com/"; }
             { name = "Excalidraw"; url = "https://excalidraw.com/"; }
             { name = "Excalidraw STEM"; url = "https://math.preview.excalidraw.com/"; }
+            { name = "FilePizza"; url = "https://file.pizza/"; }
             { name = "Filippo Valsorda"; url = "https://filippo.io/"; }
             { name = "Flightradar24"; url = "https://www.flightradar24.com/"; }
             { name = "Freedium"; url = "https://freedium.cfd/"; }
@@ -1549,6 +1553,7 @@ in {
             { name = "latex2png"; url = "https://latex2png.com/"; }
             { name = "LaTeX - Wikibooks"; url = "https://en.wikibooks.org/wiki/LaTeX"; }
             { name = "lazy.nvim"; url = "https://lazy.folke.io/"; }
+            { name = "Lilaq"; url = "https://lilaq.org/"; }
             { name = "Man Pages"; url = "https://www.mankier.com/"; }
             { name = "Manx"; url = "https://vt100.net/manx/"; }
             { name = "MathJax basic tutorial and quick reference"; url = "https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"; }
@@ -1577,6 +1582,7 @@ in {
             { name = "SVG Viewer"; url = "https://www.svgviewer.dev/"; }
             { name = "The Official U.S. Time | NIST"; url = "https://www.time.gov/"; }
             { name = "Time.is"; url = "https://time.is/"; }
+            { name = "Touying"; url = "https://touying-typ.github.io/docs/start/"; }
             { name = "Typst Documentation"; url = "https://typst.app/docs/"; }
             { name = "Usage message - Wikipedia"; url = "https://en.wikipedia.org/wiki/Usage_message"; }
             { name = "Watson Text to Speech"; url = "https://www.ibm.com/demos/live/tts-demo/self-service/home"; }
