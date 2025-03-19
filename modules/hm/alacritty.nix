@@ -23,7 +23,7 @@ in {
     };
 
     extraHints = mkOption {
-      type = types.listOf (pkgs.formats.yaml { }).type;
+      type = types.listOf (pkgs.formats.toml { }).type;
       default = [ ];
       description = "Extra hints added to the Alacritty configuration file.";
     };
@@ -42,16 +42,16 @@ in {
         colors = mkIf (cfg.colors != null) cfg.colors;
         hints.enabled = [
           {
-            regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\\\s{-}\\\\^⟨⟩`]+";
+            regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\\\s{-}\\\\^⟨⟩`\\\\\\\\]+";
             hyperlinks = true;
-            command = "xdg-open";
             post_processing = true;
             persist = false;
-            mouse = { enabled = true; };
-            binding = { key = "U"; mods = "Control|Shift"; };
+            command = "xdg-open";
+            binding = { key = "O"; mods = "Control|Shift"; };
+            mouse.enabled = true;
           }
           {
-            regex = "[a-f0-9]{40}|[a-f0-9]{7,8}";
+            regex = "[0-9a-f]{7,40}";
             action = "Copy";
             binding = { key = "H"; mods = "Control|Shift"; };
           }
