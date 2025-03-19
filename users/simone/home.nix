@@ -250,6 +250,19 @@ in {
         unsetopt PROMPT_SUBST
       fi
 
+      # Set up dynamic title for terminal emulator.
+      autoload -Uz add-zsh-hook
+      function xterm_title_precmd() {
+        builtin print -n -- "\e]2;''${(%):-%(4~|…/%3~|%~)}\a"
+      }
+      function xterm_title_preexec() {
+        builtin print -n -- "\e]2;''${(q)1}\a"
+      }
+      if [[ "$TERM" == (alacritty*|ansi|*color*|*direct*|linux|tmux*|vt100|xterm*) ]]; then
+        add-zsh-hook -Uz precmd xterm_title_precmd
+        add-zsh-hook -Uz preexec xterm_title_preexec
+      fi
+
       # Load modules.
       zmodload zsh/complist
     '';
@@ -285,7 +298,7 @@ in {
       bindkey "$terminfo[kLFT5]" backward-word
       bindkey "$terminfo[kRIT5]" forward-word
 
-      fancy_ctrl_z() {
+      function fancy_ctrl_z() {
         if [[ ''${#BUFFER} -eq 0 ]]; then
           BUFFER="fg"
           zle accept-line -w
