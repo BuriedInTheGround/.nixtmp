@@ -1416,7 +1416,7 @@ in {
             { name = "Google Scholar"; url = "https://scholar.google.com/"; }
             { name = "Internet Archive"; url = "https://archive.org/"; }
             { name = "Internet Archive Scholar"; url = "https://scholar.archive.org/"; }
-            { name = "Sci-Hub"; url = "https://sci-hub.se/"; }
+            { name = "Sci-Hub"; url = "https://sci-hub.box/"; }
             { name = "Six Degrees of Wikipedia"; url = "https://www.sixdegreesofwikipedia.com/"; }
           ];
         }
@@ -1516,6 +1516,7 @@ in {
             { name = "Command Line Interface Guidelines"; url = "https://clig.dev/"; }
             { name = "Compiler Explorer"; url = "https://godbolt.org/"; }
             { name = "configure"; url = "https://configure.xn--stpie-k0a81a.com/"; }
+            { name = "Contributor Covenant"; url = "https://www.contributor-covenant.org/"; }
             { name = "Conventional Commits"; url = "https://www.conventionalcommits.org/"; }
             { name = "Coursera"; url = "https://www.coursera.org/"; }
             { name = "Cronokirby (Lúcás Meier)"; url = "https://cronokirby.com/"; }
@@ -1527,6 +1528,7 @@ in {
             { name = "Dictionary of Algorithms and Data Structures"; url = "https://xlinux.nist.gov/dads/"; }
             { name = "Discord"; url = "https://discord.com/channels/@me"; }
             { name = "Dizionario Etimologico"; url = "https://etimo.it/"; }
+            { name = "DPI Calculator / PPI Calculator"; url = "https://www.sven.de/dpi/"; }
             { name = "Duolingo"; url = "https://www.duolingo.com/learn"; }
             { name = "Emojipedia"; url = "https://emojipedia.org/"; }
             { name = "Etsy"; url = "https://www.etsy.com/"; }
