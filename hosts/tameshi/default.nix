@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -71,10 +71,6 @@
       };
     };
   };
-
-  environment.systemPackages = [
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.uutils-coreutils-noprefix
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
