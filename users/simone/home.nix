@@ -1079,8 +1079,8 @@ in {
       };
       extraHints = [
         {
-          regex = "(([0-9A-Za-z._\/]|[^\x00-\x7f]){1}[^ :\n]*):([0-9]+)(:([0-9]+))?";
-          command = "${config.home.homeDirectory}/Scripts/hints/open_in_vim";
+          regex = "(/[ /0-9A-Za-z-._]+|[/0-9A-Za-z-._]+)([.][0-9A-Za-z]+|[A-Za-z]+):[0-9]+(:[0-9]+)?";
+          command = "${config.home.homeDirectory}/Scripts/hints/open_in_nvim";
           binding = { key = "L"; mods = "Control|Shift"; };
         }
       ];

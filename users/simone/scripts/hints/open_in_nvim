@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#   first group         case a                case b               case x             case y         second group  third group
+#   (filename)   (absolute w/ spaces)  (relative w/o spaces)  (ext w/ numbers)  (noext w/o numbers)   (line nr)    (column nr)
+#       │                 │                      │                   │                    │               │             │
+#       │ ┌───────────────┘      ┌───────────────┘  ┌────────────────┘ ┌──────────────────┘ ┌─────────────┘             │
+#       │ │                      │                  │                ┌─┘         ┌──────────┘┌──────────────────────────┘
+#       🯘 🯘                      🯘                  🯘                🯘           🯘           🯘
+REGEX='/((?:\/[ \/0-9A-Za-z-._]+|[\/0-9A-Za-z-._]+)(?:\.[0-9A-Za-z]+|[A-Za-z]+)):([0-9]+)(?::([0-9]+))?/'
+
+FILENAME=$(perl -n -e "$REGEX && print \$1" <<<"$1")
+LINE=$(perl -n -e "$REGEX && print \$2" <<<"$1")
+COLUMN=$(perl -n -e "$REGEX && print \$3" <<<"$1")
+
+if [[ -z "$LINE" ]]; then
+    LINE='0'
+fi
+
+if [[ -z "$COLUMN" ]]; then
+    COLUMN='0'
+fi
+
+alacritty msg create-window \
+    --working-directory "$PWD" \
+    --command nvim -c "call cursor($LINE,$COLUMN)" "$FILENAME"
