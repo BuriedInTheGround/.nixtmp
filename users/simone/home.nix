@@ -22,7 +22,6 @@ in {
     pkgs.charm-freeze # Generate images of code and terminal output.
     pkgs.doggo # DNS client.
     pkgs.dust # Intuitive disk usage.
-    pkgs.felix-fm # File manager.
     pkgs.ffmpeg # Multimedia processing framework.
     pkgs.gimp # Raster graphics editor.
     pkgs.glow # CLI markdown reader.
@@ -115,15 +114,6 @@ in {
   xdg.enable = true;
   xdg.userDirs.enable = true;
 
-  # Add some missing desktop entries.
-  xdg.desktopEntries = {
-    felix = {
-      exec = "fx %f";
-      genericName = "File Manager";
-      name = "felix";
-    };
-  };
-
   # Set some default applications.
   xdg.mimeApps = {
     enable = true;
@@ -144,9 +134,6 @@ in {
       "x-scheme-handler/mailto" = "chromium-browser.desktop";
       "x-scheme-handler/unknown" = "chromium-browser.desktop";
       "x-scheme-handler/webcal" = "chromium-browser.desktop";
-
-      # File manager
-      "inode/directory" = "felix.desktop";
 
       # Image viewer
       "image/bmp" = "feh.desktop";
@@ -318,8 +305,6 @@ in {
           cat $@ | eval "$PAGER"
         fi
       }
-
-      source <(command fx --init)
 
       [[ ! -f "$ZDOTDIR/.p10k.zsh" ]] || source "$ZDOTDIR/.p10k.zsh"
     '';
@@ -1715,22 +1700,6 @@ in {
     wrongcolor=${perpetua.red}ff
     modifcolor=${perpetua.red}ff
     bgcolor=${perpetua.base0}ff
-  '';
-
-  xdg.configFile."felix/config.yaml".text = ''
-    match_vim_exit_behavior: true
-    exec:
-      'feh -.':
-        [gif, hdr, jpeg, jpg, png, svg]
-      mpv:
-        [flac, mkv, mov, mp3, mp4]
-      zathura:
-        [pdf]
-    color:
-      dir_fg: LightBlue
-      file_fg: LightWhite
-      symlink_fg: LightCyan
-      dirty_fg: Red
   '';
 
   # This value determines the Home Manager release that your
