@@ -115,6 +115,7 @@ in {
   # Enable management of XDG directories.
   xdg.enable = true;
   xdg.userDirs.enable = true;
+  home.preferXdgDirectories = true;
 
   # Set some default applications.
   xdg.mimeApps = {
