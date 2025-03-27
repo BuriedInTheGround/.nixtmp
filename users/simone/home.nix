@@ -32,6 +32,7 @@ in {
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.mergiraf # Syntax-aware git merge driver.
     pkgs.minder # Mind-mapping tool.
     pkgs.mpc-cli # CLI for MPD.
+    pkgs.nautilus # Graphical file manager.
     pkgs.okular # Document viewer.
     pkgs.onlyoffice-bin_latest # Office suite.
     pkgs.pavucontrol # PulseAudio volume control.
@@ -135,6 +136,9 @@ in {
       "x-scheme-handler/mailto" = "chromium-browser.desktop";
       "x-scheme-handler/unknown" = "chromium-browser.desktop";
       "x-scheme-handler/webcal" = "chromium-browser.desktop";
+
+      # File manager
+      "inode/directory" = "org.gnome.Nautilus.desktop";
 
       # Image viewer
       "image/bmp" = "feh.desktop";
