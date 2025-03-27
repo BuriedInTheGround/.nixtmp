@@ -176,6 +176,11 @@ in {
           url = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
         }
         {
+          name = "Searchix";
+          shortcut = "sn";
+          url = "https://searchix.alanpearce.eu/?query={searchTerms}";
+        }
+        {
           name = "YouTube";
           shortcut = "yt";
           url = "https://www.youtube.com/results?search_query={searchTerms}";
