@@ -15,6 +15,7 @@ in {
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.adwaita-icon-theme # Adwaita icon theme.
     pkgs.age # Encryption tool.
     pkgs.anki-bin # Spaced repetition flashcards.
     pkgs.bunnyfetch # Simple system info fetch utility.
@@ -176,22 +177,27 @@ in {
       name = (if theme == "dark" then "adw-gtk3-dark" else "adw-gtk3");
       package = pkgs.adw-gtk3;
     };
-    cursorTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "MoreWaita";
+      package = pkgs.morewaita-icon-theme;
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = (if theme == "dark" then 1 else 0);
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = (if theme == "dark" then 1 else 0);
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = theme == "dark";
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = theme == "dark";
   };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-${theme}";
     };
+  };
+
+  # Apply the cursor theme globally.
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = (if theme == "dark" then "Bibata-Original-Classic" else "Bibata-Original-Ice");
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 
   programs.zsh = {
@@ -1091,7 +1097,6 @@ in {
       rules = {
         "Qalculate-gtk".state = "floating";
       };
-      startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
     };
 
     chromium = {
