@@ -412,6 +412,16 @@ in {
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@hm" ];
             };
+            "Searchix" = {
+              urls = [{
+                template = "https://searchix.alanpearce.eu/";
+                params = [
+                  { name = "query"; value = "{searchTerms}"; }
+                ];
+              }];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@sn" ];
+            };
             "Go Packages" = {
               urls = [{
                 template = "https://pkg.go.dev/search?q={searchTerms}";
