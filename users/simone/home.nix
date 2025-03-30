@@ -196,15 +196,6 @@ in {
     };
   };
 
-  # Apply the cursor theme globally.
-  home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = (if theme == "dark" then "Bibata-Original-Classic" else "Bibata-Original-Ice");
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = false; # Disabled. Handled by zsh-autocomplete.
@@ -1102,6 +1093,7 @@ in {
       rules = {
         "Qalculate-gtk".state = "floating";
       };
+      startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
     };
 
     chromium = {
