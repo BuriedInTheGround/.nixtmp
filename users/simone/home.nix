@@ -969,7 +969,8 @@ in {
   services.redshift = {
     enable = true;
     enableVerboseLogging = true;
-    provider = "geoclue2";
+    latitude = 45.407778;
+    longitude = 11.873333;
     temperature.day = 6500;
     temperature.night = 4500;
   };
