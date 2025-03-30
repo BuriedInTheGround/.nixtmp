@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ "$(systemctl --user is-active redshift.service)" == "active" ]]; then
+    journalctl --boot 0 --pager-end --user-unit redshift.service \
+        | grep 'Color temperature' \
+        | tail --lines 1 \
+        | sed 's/^.*\]: //'
+else
+    echo 'Redshift is turned off'
+fi

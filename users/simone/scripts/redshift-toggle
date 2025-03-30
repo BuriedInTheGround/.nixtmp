@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ "$(systemctl --user is-active redshift.service)" == "active" ]]; then
+    systemctl --user stop redshift.service
+    echo 'Redshift stopped'
+else
+    systemctl --user start redshift.service
+    echo 'Redshift started'
+fi
