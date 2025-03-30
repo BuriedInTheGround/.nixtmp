@@ -971,8 +971,8 @@ in {
     enableVerboseLogging = true;
     latitude = 45.407778;
     longitude = 11.873333;
-    temperature.day = 6500;
-    temperature.night = 4500;
+    temperature.day = 4950;
+    temperature.night = 3350;
   };
 
   # Notification daemon.
