@@ -101,12 +101,14 @@
       pkgs.newcomputermodern
       pkgs.noto-fonts
       pkgs.noto-fonts-color-emoji # Emoji
+      pkgs.noto-fonts-monochrome-emoji
       pkgs.public-sans # Sans-serif
       pkgs.source-code-pro
       pkgs.source-sans
       pkgs.source-serif
       pkgs.times-newer-roman # Serif
       pkgs.tt2020
+      pkgs.twemoji-color-font
       pkgs.ucs-fonts
       pkgs.work-sans
       (pkgs.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
