@@ -1406,6 +1406,7 @@ in {
             { name = "Google Scholar"; url = "https://scholar.google.com/"; }
             { name = "Internet Archive"; url = "https://archive.org/"; }
             { name = "Internet Archive Scholar"; url = "https://scholar.archive.org/"; }
+            { name = "Semantic Scholar"; url = "https://www.semanticscholar.org/"; }
             { name = "Sci-Hub"; url = "https://sci-hub.box/"; }
             { name = "Six Degrees of Wikipedia"; url = "https://www.sixdegreesofwikipedia.com/"; }
           ];
@@ -1532,6 +1533,7 @@ in {
             { name = "fstab - Wikipedia"; url = "https://en.wikipedia.org/wiki/Fstab"; }
             { name = "Generatore di Anagrammi"; url = "https://www.generatorediparole.it/anagramma"; }
             { name = "Gernot's List of Systems Benchmarking Crimes"; url = "https://gernot-heiser.org/benchmarking-crimes.html"; }
+            { name = "GetEmoji"; url = "https://getemoji.com/"; }
             { name = "Ghostty"; url = "https://ghostty.org/"; }
             { name = "GitHub Gist"; url = "https://gist.github.com/"; }
             { name = "GitLab"; url = "https://gitlab.com/"; }
@@ -1543,6 +1545,8 @@ in {
             { name = "ImperialViolet (Adam Langley)"; url = "https://www.imperialviolet.org/"; }
             { name = "International System of Units - Wikipedia"; url = "https://en.wikipedia.org/wiki/International_System_of_Units"; }
             { name = "Internet protocol suite - Wikipedia"; url = "https://en.wikipedia.org/wiki/Internet_protocol_suite"; }
+            { name = "Internet Speed Test | Cloudflare"; url = "https://speed.cloudflare.com/"; }
+            { name = "Internet Speed Test | Fast.com"; url = "https://fast.com/"; }
             { name = "IOC.exchange - Mastodon"; url = "https://ioc.exchange/"; }
             { name = "Jisho"; url = "https://jisho.org/"; }
             { name = "Johnny.Decimal"; url = "https://johnnydecimal.com/"; }
