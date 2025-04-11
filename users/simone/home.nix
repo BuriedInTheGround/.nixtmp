@@ -42,9 +42,11 @@ in {
     pkgs.qalculate-gtk # Calculator.
     pkgs.ripgrep-all # Search with ripgrep in pdf, docx, sqlite, and more.
     pkgs.simplescreenrecorder # Screen recorder.
+    pkgs.space-cadet-pinball # 3D Pinball Space Cadet game.
     pkgs.systemctl-tui # Interact with systemd services.
     pkgs.tree # Tree view of directories.
     pkgs.tz # Time zone helper.
+    pkgs.xbomb # Minesweeper game.
     pkgs.xcolor # Color picker.
     (pkgs.parallel-full.override { # Execute jobs in parallel.
       willCite = true;
