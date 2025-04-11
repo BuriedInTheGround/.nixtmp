@@ -18,6 +18,7 @@ in {
     pkgs.adwaita-icon-theme # Adwaita icon theme.
     pkgs.age # Encryption tool.
     pkgs.anki-bin # Spaced repetition flashcards.
+    pkgs.audacity # Audio editor.
     pkgs.bunnyfetch # Simple system info fetch utility.
     pkgs.chafa # Terminal graphics.
     pkgs.charm-freeze # Generate images of code and terminal output.
