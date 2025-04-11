@@ -118,7 +118,7 @@
     defaultFonts = {
       sansSerif = [ "Public Sans" "DejaVu Sans" ];
       serif = [ "Times Newer Roman" "DejaVu Serif" ];
-      monospace = [ "Commit Mono" "DejaVu Sans Mono" "Symbols Nerd Font Mono" ];
+      monospace = [ "Commit Mono" "Noto Color Emoji" "Symbols Nerd Font Mono" "DejaVu Sans Mono" ];
       emoji = [ "Noto Color Emoji" ];
     };
   };
