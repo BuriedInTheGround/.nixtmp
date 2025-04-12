@@ -120,6 +120,16 @@ in {
   xdg.userDirs.enable = true;
   home.preferXdgDirectories = true;
 
+  # Add some missing desktop entries.
+  xdg.desktopEntries = {
+    xbomb = {
+      name = "XBomb";
+      genericName = "Minesweeper Game";
+      exec = "xbomb";
+      categories = [ "Game" "LogicGame" ];
+    };
+  };
+
   # Set some default applications.
   xdg.mimeApps = {
     enable = true;
