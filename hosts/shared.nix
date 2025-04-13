@@ -147,6 +147,7 @@
     pciutils
     psmisc
     unzip
+    usbutils
     vim
     wget2
     xclip
