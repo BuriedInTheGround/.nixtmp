@@ -15,6 +15,13 @@
   boot.kernelModules = [
     "usb_storage" # This is necessary to mount USB sticks.
     "usbhid" # This is necessary for my YubiKey to work properly.
+
+    # These are necessary for Docker to work properly.
+    "xt_addrtype"
+    "xt_MASQUERADE"
+    "nf_conntrack_netlink"
+    "nft_chain_nat"
+    "overlay"
   ];
 
   # We configure the Android Debug Bridge (adb) to work with Android devices.
@@ -64,6 +71,7 @@
     enable = true;
     enableOnBoot = false;
     autoPrune.enable = true;
+    storageDriver = "overlay2";
   };
 
   services.keyd = lib.mkIf (currentHost == "kokoromi") {
