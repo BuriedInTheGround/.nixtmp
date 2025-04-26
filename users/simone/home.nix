@@ -1145,8 +1145,14 @@ in {
         # Bitwarden Password Manager
         {
           id = "nngceckbapebfimnlniiiahkandclblb";
-          hash = "sha256-dzw9WHFayRAOi/RbezqRXEKtve3gxcN0kOAvUhXXW+8=";
-          version = "2025.2.1";
+          hash = "sha256-LzZhESPjOvveA+2KcBnKTbMh7XhcKpsShzh6cECLHbM=";
+          version = "2025.3.2";
+        }
+        # Consent-O-Matic
+        {
+          id = "mdjildafknihdffpkfmmpnpoiajfjnjd";
+          hash = "sha256-qdMdkakBMffTyrLcPjN+Q/dfTyto5/3oEuDNJKgTvpg=";
+          version = "1.1.3";
         }
         # Dark Reader
         {
@@ -1157,8 +1163,8 @@ in {
         # LanguageTool
         {
           id = "oldceeleldhonbafppcapldpdifcinji";
-          hash = "sha256-CzfPSDYCMGcfS9dV0VH20b+cb+jQKGYbNHy3smSvG7E=";
-          version = "8.18.2";
+          hash = "sha256-6ZWqJB+ln6ZtReKUejMF331I3HAmnmYBD+zB799t3rI=";
+          version = "8.19.4";
         }
         # Markdown Viewer
         {
@@ -1169,14 +1175,14 @@ in {
         # Privacy Badger
         {
           id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp";
-          hash = "sha256-gDssatIKJL/0eSDiH/+1/IKRTddRmRGNusiu+DfkDrU=";
-          version = "2025.3.3";
+          hash = "sha256-1h+rD8ozrs+6x59BozqhjtouIa+1yqbEq+fs3r+1WUU=";
+          version = "2025.3.27";
         }
         # Refined GitHub
         {
           id = "hlepfoohegkhhmjieoechaddaejaokhf";
-          hash = "sha256-D2J3dzrdf+YQAzIn9chRvuRWzekr3STQ0dVkhzgwoAQ=";
-          version = "25.2.26";
+          hash = "sha256-/CMV88bChYJMhUL6IaPL+oQZDHy7m+bKhr/1gS6GkCE=";
+          version = "25.4.8";
         }
         # Return YouTube Dislike
         {
@@ -1187,14 +1193,14 @@ in {
         # uBlock Origin
         {
           id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";
-          hash = "sha256-lAJcYnfvnpVoyS8tQ2TGstmFA6PCu/4ySyZZcZSdlnk=";
-          version = "1.62.0";
+          hash = "sha256-5hauSUdYLtv42lB/YpQVup0Gqgp4pH07G4MD/9EE09I=";
+          version = "1.63.2";
         }
         # Vimium
         {
           id = "dbepggeogbaibhgnhhndojpepiihcmeb";
-          hash = "sha256-DaEM1NyMX8RMBvWoIVOhmfY/ae66HCNfRFnwAuLUHVU=";
-          version = "2.1.2";
+          hash = "sha256-tCAX6XQP2nHxcjFes1pUHojhEsev4N16qJrtiyhRMlg=";
+          version = "2.2.1";
         }
       ];
       defaultSearchProvider = "DuckDuckGo";
