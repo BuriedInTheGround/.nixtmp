@@ -1322,6 +1322,21 @@ in {
           ];
         }
         {
+          name = "Blogs and People";
+          bookmarks = [
+            { name = "Cronokirby (Lúcás Meier)"; url = "https://cronokirby.com/"; }
+            { name = "Filippo Valsorda"; url = "https://filippo.io/"; }
+            { name = "ImperialViolet (Adam Langley)"; url = "https://www.imperialviolet.org/"; }
+            { name = "kennethnym"; url = "https://kennethnym.com/"; }
+            { name = "Loup Vaillant"; url = "https://loup-vaillant.fr/"; }
+            { name = "Nadim Kobeissi"; url = "https://nadim.computer/"; }
+            { name = "research!rsc (Russ Cox)"; url = "https://research.swtch.com/"; }
+            { name = "Samuel Lucas"; url = "https://samuellucas.com/"; }
+            { name = "Simone Ragusa"; url = "https://interrato.dev/"; }
+            { name = "Xe Iaso"; url = "https://xeiaso.net/"; }
+          ];
+        }
+        {
           name = "Colors";
           bookmarks = [
             { name = "APCA Contrast Calculator"; url = "https://www.myndex.com/APCA/"; }
@@ -1342,12 +1357,14 @@ in {
             { name = "An Introduction to Secret-Sharing-Based Secure Multiparty Computation"; url = "https://eprint.iacr.org/2022/062"; }
             { name = "Ben Lynn Notes"; url = "https://crypto.stanford.edu/pbc/notes/"; }
             { name = "cryptii"; url = "https://cryptii.com/"; }
+            { name = "Crypto Gotchas!"; url = "https://gotchas.salusa.dev/"; }
             { name = "Cryptographic Computing"; url = "https://users-cs.au.dk/orlandi/crycom/"; }
             { name = "Cryptography Social"; url = "https://cryptography.social/"; }
             { name = "Desmos | Geometry"; url = "https://www.desmos.com/geometry"; }
             { name = "Dhole Moments"; url = "https://soatok.blog/category/cryptography/"; }
             { name = "EncryptedSystems.org"; url = "https://encryptedsystems.org/"; }
             { name = "GeoGebra Classic"; url = "https://www.geogebra.org/classic"; }
+            { name = "Glossary of mathematical symbols - Wikipedia"; url = "https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols"; }
             { name = "Handbook of Applied Cryptography"; url = "https://cacr.uwaterloo.ca/hac/"; }
             { name = "Key Material"; url = "https://keymaterial.net/category/cryptography/"; }
             { name = "Mathematics for Computer Science"; url = "https://courses.csail.mit.edu/6.042/spring18/mcs.pdf"; }
@@ -1409,6 +1426,7 @@ in {
           bookmarks = [
             { name = "One Piece Power"; url = "https://onepiecepower.com/index"; }
             { name = "One Piece Filler List"; url = "https://www.animefillerlist.com/shows/one-piece"; }
+            { name = "One Piece | LupiTeam"; url = "https://lupiteam.net/comics/one-piece"; }
             { name = "Watch order for Movies, Specials, Cover Stories"; url = "https://www.reddit.com/r/OnePiece/comments/tr0izv/watch_order_for_movies_specials_cover_stories_etc/"; }
           ];
         }
@@ -1416,6 +1434,7 @@ in {
           name = "Research";
           bookmarks = [
             { name = "Anna’s Archive"; url = "https://annas-archive.org/"; }
+            { name = "Cryptology ePrint Archive"; url = "https://eprint.iacr.org/"; }
             { name = "Google Scholar"; url = "https://scholar.google.com/"; }
             { name = "Internet Archive"; url = "https://archive.org/"; }
             { name = "Internet Archive Scholar"; url = "https://scholar.archive.org/"; }
@@ -1460,6 +1479,7 @@ in {
             { name = "Manrope Font"; url = "https://gent.media/manrope"; }
             { name = "Nerd Fonts"; url = "https://www.nerdfonts.com/"; }
             { name = "Quotation mark - Wikipedia"; url = "https://en.wikipedia.org/wiki/Quotation_mark"; }
+            { name = "Small Text Generator"; url = "https://smalltext.io/"; }
             { name = "Title Case Converter"; url = "https://titlecaseconverter.com/"; }
             { name = "Typewolf"; url = "https://www.typewolf.com/"; }
             { name = "U.S. Graphics Company"; url = "https://usgraphics.com/"; }
@@ -1523,7 +1543,6 @@ in {
             { name = "Contributor Covenant"; url = "https://www.contributor-covenant.org/"; }
             { name = "Conventional Commits"; url = "https://www.conventionalcommits.org/"; }
             { name = "Coursera"; url = "https://www.coursera.org/"; }
-            { name = "Cronokirby (Lúcás Meier)"; url = "https://cronokirby.com/"; }
             { name = "CTAN"; url = "https://ctan.org/"; }
             { name = "decodeunicode"; url = "https://decodeunicode.org/"; }
             { name = "Detexify"; url = "https://detexify.kirelabs.org/"; }
@@ -1539,8 +1558,8 @@ in {
             { name = "Every Time Zone"; url = "https://everytimezone.com/"; }
             { name = "Excalidraw"; url = "https://excalidraw.com/"; }
             { name = "Excalidraw STEM"; url = "https://math.preview.excalidraw.com/"; }
+            { name = "Faces of Open Source"; url = "https://www.facesofopensource.com/"; }
             { name = "FilePizza"; url = "https://file.pizza/"; }
-            { name = "Filippo Valsorda"; url = "https://filippo.io/"; }
             { name = "Flightradar24"; url = "https://www.flightradar24.com/"; }
             { name = "Freedium"; url = "https://freedium.cfd/"; }
             { name = "fstab - Wikipedia"; url = "https://en.wikipedia.org/wiki/Fstab"; }
@@ -1555,7 +1574,6 @@ in {
             { name = "HHKB"; url = "https://hhkeyboard.us/"; }
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "ICANN Lookup"; url = "https://lookup.icann.org/"; }
-            { name = "ImperialViolet (Adam Langley)"; url = "https://www.imperialviolet.org/"; }
             { name = "International System of Units - Wikipedia"; url = "https://en.wikipedia.org/wiki/International_System_of_Units"; }
             { name = "Internet protocol suite - Wikipedia"; url = "https://en.wikipedia.org/wiki/Internet_protocol_suite"; }
             { name = "Internet Speed Test | Cloudflare"; url = "https://speed.cloudflare.com/"; }
@@ -1592,11 +1610,9 @@ in {
             { name = "RANDOM.ORG"; url = "https://www.random.org/"; }
             { name = "Reference - The Chromium Projects"; url = "https://www.chromium.org/chromium-os/developer-library/reference/"; }
             { name = "RegExr"; url = "https://regexr.com/"; }
-            { name = "research!rsc"; url = "https://research.swtch.com/"; }
             { name = "Screego"; url = "https://app.screego.net/"; }
             { name = "Semantic Versioning"; url = "https://semver.org/"; }
             { name = "SequenceDiagram.org"; url = "https://sequencediagram.org/"; }
-            { name = "Simone Ragusa"; url = "https://interrato.dev/"; }
             { name = "SPDX License List"; url = "https://spdx.org/licenses/"; }
             { name = "Special Publication 811 | NIST"; url = "https://www.nist.gov/pml/special-publication-811"; }
             { name = "Stack Exchange"; url = "https://stackexchange.com/sites"; }
@@ -1610,7 +1626,6 @@ in {
             { name = "Usage message - Wikipedia"; url = "https://en.wikipedia.org/wiki/Usage_message"; }
             { name = "Watson Text to Speech"; url = "https://www.ibm.com/demos/live/tts-demo/self-service/home"; }
             { name = "WordSafety.com"; url = "http://wordsafety.com/"; }
-            { name = "Xe Iaso"; url = "https://xeiaso.net/"; }
             { name = "Yr - Weather forecast"; url = "https://www.yr.no/en"; }
             { name = "ZSH - Documentation"; url = "https://zsh.sourceforge.io/Doc/"; }
           ];
