@@ -127,11 +127,6 @@
   # We use a memory-safe implementation of the sudo command.
   security.sudo-rs.enable = true;
 
-  # We enable AppArmor for enhanced access control.
-  security.apparmor.enable = true;
-  security.apparmor.killUnconfinedConfinables = true;
-  services.dbus.apparmor = "enabled";
-
   # We use dbus-broker for high performance and reliability.
   services.dbus.implementation = "broker";
 
