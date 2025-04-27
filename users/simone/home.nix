@@ -41,6 +41,7 @@ in {
     pkgs.progress # Coreutils progress viewer.
     pkgs.qalculate-gtk # Calculator.
     pkgs.ripgrep-all # Search with ripgrep in pdf, docx, sqlite, and more.
+    pkgs.signal-desktop # Signal for desktop.
     pkgs.simplescreenrecorder # Screen recorder.
     pkgs.space-cadet-pinball # 3D Pinball Space Cadet game.
     pkgs.systemctl-tui # Interact with systemd services.
