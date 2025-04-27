@@ -240,7 +240,15 @@ in {
       extended = true;
       ignoreAllDups = true;
       ignoreDups = true;
-      ignorePatterns = [ "rm *" "rr *" "pkill *" "killall *" ];
+      ignorePatterns = [
+        "kill *"
+        "killall *"
+        "pkill *"
+        "rm *"
+        "rr *"
+        "sudo rm *"
+        "sudo rr *"
+      ];
       ignoreSpace = true;
       path = "${config.xdg.stateHome}/zsh/history";
       share = true;
