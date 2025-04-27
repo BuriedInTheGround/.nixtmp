@@ -88,8 +88,15 @@ in {
     PAGER = "less --tabs 4 --mouse --wheel-lines 4 -RFX";
     TZ_LIST = "US/Eastern;US/Central;US/Mountain;US/Pacific;Asia/Shanghai;Asia/Tokyo;Australia/Sydney";
     WORDCHARS = "*[]~;!$%^(){}<>";
-    XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose"; # Declutter home.
     ZVM_CURSOR_STYLE_ENABLED = "false"; # Disable zsh-vi-mode cursor style.
+
+    # Declutter home.
+    ALTUSERXSESSION = "${config.xdg.cacheHome}/X11/Xsession";
+    ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
+    USERXSESSION = "${config.xdg.cacheHome}/X11/xsession";
+    USERXSESSIONRC = "${config.xdg.cacheHome}/X11/xsessionrc";
+    XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
+    XCOMPOSEFILE = "${config.xdg.configHome}/X11/xcompose";
   };
 
   home.shellAliases = {
