@@ -781,6 +781,7 @@ in {
     feh.enable = true; # Light-weight image viewer.
     jq.enable = true; # JSON processor.
     ripgrep.enable = true; # Recursive search in directories.
+    sagemath.enable = true; # Mathematics software system.
     yt-dlp.enable = true; # CLI audio/video downloader.
   };
 
