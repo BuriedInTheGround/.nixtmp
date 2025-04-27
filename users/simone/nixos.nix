@@ -138,6 +138,6 @@
     description = "Simone Ragusa";
     extraGroups = [ "wheel" "audio" "video" "networkmanager" "adbusers" "dialout" "docker" "wireshark" ];
     shell = pkgs.zsh;
-    hashedPassword = "$y$j9T$S3pjVZTRl4iZNiYumeN4E0$QjbMrNx7K1t25pEhrXMnMAOtQSQ750NV1dqOJ7UBOP5"; # TODO: Change, now it's "nixos".
+    initialHashedPassword = "$y$j9T$AQ8vqlRkYageeY.9kRawT/$hHLdcU/H2OFsIHL0kU9H7QQKku7amZWN.j0TGHbMZx4";
   };
 }
