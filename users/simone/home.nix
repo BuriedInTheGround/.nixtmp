@@ -1350,8 +1350,11 @@ in {
             { name = "Cronokirby (Lúcás Meier)"; url = "https://cronokirby.com/"; }
             { name = "Filippo Valsorda"; url = "https://filippo.io/"; }
             { name = "ImperialViolet (Adam Langley)"; url = "https://www.imperialviolet.org/"; }
+            { name = "Jack O'Connor"; url = "https://jacko.io/"; }
+            { name = "Jean-Philippe Aumasson"; url = "https://www.aumasson.jp/"; }
             { name = "kennethnym"; url = "https://kennethnym.com/"; }
             { name = "Loup Vaillant"; url = "https://loup-vaillant.fr/"; }
+            { name = "Markku-Juhani O. Saarinen"; url = "https://mjos.fi/"; }
             { name = "Nadim Kobeissi"; url = "https://nadim.computer/"; }
             { name = "research!rsc (Russ Cox)"; url = "https://research.swtch.com/"; }
             { name = "Samuel Lucas"; url = "https://samuellucas.com/"; }
@@ -1366,6 +1369,7 @@ in {
             { name = "Color Designer"; url = "https://colordesigner.io/"; }
             { name = "Coolors"; url = "https://coolors.co/"; }
             { name = "Interactive color picker comparison (Oklch, Okhsv, Okhsl, Hsluv)"; url = "https://bottosson.github.io/misc/colorpicker/"; }
+            { name = "International orange - Wikipedia"; url = "https://en.wikipedia.org/wiki/International_orange"; }
             { name = "Large list of handpicked color names"; url = "https://meodai.github.io/color-names/"; }
             { name = "RAL Farben"; url = "https://www.ral-farben.de/"; }
             { name = "The Dimensions of Colour, modern colour theory"; url = "http://www.huevaluechroma.com/"; }
@@ -1492,6 +1496,7 @@ in {
             { name = "ドットコロン"; url = "https://dotcolon.net/"; }
             { name = "Font Library"; url = "https://fontlibrary.org/en"; }
             { name = "Font Squirrel"; url = "https://www.fontsquirrel.com/"; }
+            { name = "Fontello - icon fonts generator"; url = "https://fontello.com/"; }
             { name = "Fonts & Encodings - Yannis Haralambous"; url = "https://hal.science/hal-02112942/document"; }
             { name = "Fonts by Hoefler&Co"; url = "https://www.typography.com/"; }
             { name = "Fontsource"; url = "https://fontsource.org/"; }
@@ -1594,6 +1599,8 @@ in {
             { name = "GitLab"; url = "https://gitlab.com/"; }
             { name = "Google Style Guides"; url = "https://google.github.io/styleguide/"; }
             { name = "Grammarly"; url = "https://app.grammarly.com/"; }
+            { name = "GrapheneOS: the private and secure mobile OS"; url = "https://grapheneos.org/"; }
+            { name = "Graphical User Interface Gallery"; url = "http://toastytech.com/guis/index.html"; }
             { name = "HHKB"; url = "https://hhkeyboard.us/"; }
             { name = "How Many Days Has It Been Since a JWT alg:none Vulnerability?"; url = "https://www.howmanydayssinceajwtalgnonevuln.com/"; }
             { name = "ICANN Lookup"; url = "https://lookup.icann.org/"; }
@@ -1638,6 +1645,7 @@ in {
             { name = "SequenceDiagram.org"; url = "https://sequencediagram.org/"; }
             { name = "SPDX License List"; url = "https://spdx.org/licenses/"; }
             { name = "Special Publication 811 | NIST"; url = "https://www.nist.gov/pml/special-publication-811"; }
+            { name = "Spectrum, a step towards usable secure computing"; url = "https://spectrum-os.org/"; }
             { name = "Stack Exchange"; url = "https://stackexchange.com/sites"; }
             { name = "Standard Notes"; url = "https://app.standardnotes.com/"; }
             { name = "SVG Repo"; url = "https://www.svgrepo.com/"; }
