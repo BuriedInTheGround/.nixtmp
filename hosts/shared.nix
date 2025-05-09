@@ -2,7 +2,6 @@
 
 {
   boot.kernelPackages = pkgs.linuxPackages_hardened;
-  security.lockKernelModules = true;
   security.protectKernelImage = true;
 
   # We enable redistributable firmware for better hardware compatibility.

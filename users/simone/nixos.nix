@@ -10,20 +10,6 @@
   # This is required for the Syncthing and Flameshot services to work.
   security.unprivilegedUsernsClone = true;
 
-  # Since dynamic loading is disabled for security reasons, we have to load
-  # some kernel modules manually.
-  boot.kernelModules = [
-    "usb_storage" # This is necessary to mount USB sticks.
-    "usbhid" # This is necessary for my YubiKey to work properly.
-
-    # These are necessary for Docker to work properly.
-    "xt_addrtype"
-    "xt_MASQUERADE"
-    "nf_conntrack_netlink"
-    "nft_chain_nat"
-    "overlay"
-  ];
-
   # We configure the Android Debug Bridge (adb) to work with Android devices.
   programs.adb.enable = true;
 
