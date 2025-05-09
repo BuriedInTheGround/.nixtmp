@@ -46,6 +46,12 @@
       "ntp1.inrim.it"
       "ntp2.inrim.it"
     ];
+
+    # Use per-connection randomized MAC for greater privacy.
+    networkmanager = {
+      ethernet.macAddress = "random";
+      wifi.macAddress = "random";
+    };
   };
 
   # Use a Rust implementation of NTP.
