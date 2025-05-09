@@ -17,7 +17,10 @@
   };
 
   # We use NetworkManager for networking.
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = true;
+  };
 
   # We use the Italian time zone.
   time.timeZone = "Europe/Rome";
