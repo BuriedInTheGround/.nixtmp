@@ -27,7 +27,10 @@
     };
 
     # Community packages from the Nix User Repository.
-    nur.url = "github:nix-community/NUR";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Nightly version of Neovim.
     neovim-nightly-overlay = {
