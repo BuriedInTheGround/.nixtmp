@@ -1,4 +1,4 @@
-{ options, lib, pkgs, inputs, currentHost, currentUser, ... }:
+{ options, lib, pkgs, currentHost, currentUser, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_hardened;
@@ -154,7 +154,7 @@
     xorg.xev
 
     # Rust rewrite of the GNU coreutils.
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.uutils-coreutils-noprefix
+    unstable.uutils-coreutils-noprefix
   ];
 
   documentation = {

@@ -30,7 +30,7 @@ in {
     pkgs.hyperfine # Benchmarking tool.
     pkgs.imagemagick # Raster images tools.
     pkgs.inkscape # Vector graphics editor.
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.mergiraf # Syntax-aware git merge driver.
+    pkgs.unstable.mergiraf # Syntax-aware git merge driver.
     pkgs.minder # Mind-mapping tool.
     pkgs.mpc-cli # CLI for MPD.
     pkgs.nautilus # Graphical file manager.
@@ -61,7 +61,7 @@ in {
     pkgs.nodePackages.bash-language-server
     pkgs.clang-tools
     pkgs.lua-language-server
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ltex-ls-plus
+    pkgs.unstable.ltex-ls-plus
     pkgs.marksman
     pkgs.nil
     pkgs.tailwindcss-language-server
@@ -417,7 +417,7 @@ in {
   # Highly customizable system info fetch utility.
   programs.fastfetch = {
     enable = true;
-    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.fastfetch;
+    package = pkgs.unstable.fastfetch;
     # Adapted from https://github.com/usgraphics/TR-100.
     settings = {
       logo = null;

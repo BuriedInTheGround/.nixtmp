@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 
@@ -32,7 +32,7 @@ in {
   config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.alacritty;
+      package = pkgs.unstable.alacritty;
       settings = {
         import = mkIf (cfg.import != [ ]) cfg.import;
         env.TERM = "alacritty";

@@ -44,6 +44,9 @@
     overlays = [
       inputs.neovim-nightly-overlay.overlays.default
       inputs.nur.overlays.default
+      (final: prev: {
+        unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system};
+      })
     ];
 
     lib = inputs.nixpkgs.lib.extend (final: prev: {
