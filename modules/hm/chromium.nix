@@ -48,6 +48,15 @@ in {
       example = true;
     };
 
+    package = mkOption {
+      type = types.package;
+      default = pkgs.ungoogled-chromium;
+      description = "The Chromium package to use.";
+      example = literalExpression ''
+        pkgs.ungoogled-chromium.override { enableWideVine = true; }
+      '';
+    };
+
     allowedCookies = mkOption {
       type = types.listOf types.str;
       default = [ ];
@@ -93,7 +102,7 @@ in {
   config = mkIf cfg.enable {
     programs.chromium =
       let
-        browserPackage = pkgs.ungoogled-chromium.override { enableWideVine = true; };
+        browserPackage = cfg.package;
         createChromiumExtensionFor = browserVersion: { id, hash, version }:
           {
             inherit id version;
