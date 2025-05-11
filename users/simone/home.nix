@@ -1751,22 +1751,6 @@ in {
   xdg.configFile."betterlockscreen/betterlockscreenrc".text = ''
     wallpaper_cmd="feh --no-fehbg --bg-fill"
     loginbox=00000000
-    ringcolor=${perpetua.text0}ff
-    ringvercolor=${perpetua.text0}ff
-    ringwrongcolor=${perpetua.text0}ff
-    insidewrongcolor=${perpetua.red}ff
-    timecolor=${perpetua.text0}ff
-    time_format="%H:%M:%S"
-    greetercolor=${perpetua.text0}ff
-    layoutcolor=${perpetua.text0}ff
-    keyhlcolor=${perpetua.red}ff
-    bshlcolor=${perpetua.red}ff
-    veriftext="Verifying..."
-    verifcolor=${perpetua.text0}ff
-    wrongtext="Failure!"
-    wrongcolor=${perpetua.red}ff
-    modifcolor=${perpetua.red}ff
-    bgcolor=${perpetua.base0}ff
   '';
 
   # This value determines the Home Manager release that your
