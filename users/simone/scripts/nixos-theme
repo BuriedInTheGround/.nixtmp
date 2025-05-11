@@ -40,8 +40,14 @@ if [[ matching -ne 1 ]]; then
     exit 1
 fi
 
+host="$(hostname)"
+if [[ -z "$host" ]]; then
+    echo "$(basename "$0"): error: empty hostname"
+    exit 1
+fi
+
 sed -i -E -e "s/theme = \"(dark|light)\"/theme = \"$theme\"/" "$path" 2> /dev/null
 
-nixos-rebuild test --fast --use-remote-sudo || exit 1
+nixos-rebuild test --fast --flake "${XDG_CONFIG_HOME}/nixos#${host}" --use-remote-sudo || exit 1
 bspc wm --restart || exit 1
 polybar-msg cmd restart || exit 1
