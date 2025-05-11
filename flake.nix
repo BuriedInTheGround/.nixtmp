@@ -82,7 +82,7 @@
     let
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
     in {
-      default = pkgs.mkShell {
+      default = pkgs.mkShellNoCC {
         packages = [ pkgs.just ];
       };
     };
