@@ -16,6 +16,13 @@
     "net.ipv4.tcp_congestion_control" = "bbr";
   };
 
+  # We want NTFS support.
+  boot.supportedFilesystems.ntfs = true;
+  services.tlp.settings = {
+    SATA_LINKPWR_ON_AC = "max_performance";
+    SATA_LINKPWR_ON_BAT = "max_performance";
+  };
+
   # We use NetworkManager for networking.
   networking.networkmanager = {
     enable = true;
