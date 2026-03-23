@@ -1138,7 +1138,7 @@ in {
 
     chromium = {
       enable = true;
-      package = pkgs.ungoogled-chromium.override { enableWideVine = true; };
+      package = pkgs.d02d88f.ungoogled-chromium.override { enableWideVine = true; };
       allowedCookies = [
         # Bitwarden
         "https://[*.]bitwarden.com"

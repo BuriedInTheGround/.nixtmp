@@ -10,6 +10,9 @@
     # We use the unstable nixpkgs repo for some packages, such as Neovim.
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # HACK
+    nixpkgs-d02d88f.url = "github:NixOS/nixpkgs/d02d88f8de5b882ccdde0465d8fa2db3aa1169f7";
+
     # We use disko to configure the file systems to be mounted. Note that the
     # same configuration should be used during installation.
     disko = {
@@ -49,6 +52,15 @@
       inputs.nur.overlays.default
       (final: prev: {
         unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system};
+        d02d88f = import inputs.nixpkgs-d02d88f {
+          inherit prev;
+          system = prev.system;
+          config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+            "ungoogled-chromium"
+            "ungoogled-chromium-unwrapped"
+            "widevine-cdm"
+          ];
+        };
       })
     ];
 
