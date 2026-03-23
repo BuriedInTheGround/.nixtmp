@@ -1039,7 +1039,6 @@ in {
   garden = {
     alacritty = {
       enable = true;
-      transparency = true;
       colors = {
         primary = {
           foreground = "${perpetua.text0}";
