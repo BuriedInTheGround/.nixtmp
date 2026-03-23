@@ -84,6 +84,7 @@
       pkgs.fira-sans
       pkgs.fraunces
       pkgs.ibm-plex
+      pkgs.inriafonts
       pkgs.inter
       pkgs.jetbrains-mono
       pkgs.libertinus
@@ -96,6 +97,7 @@
       pkgs.noto-fonts
       pkgs.noto-fonts-color-emoji # Emoji
       pkgs.noto-fonts-monochrome-emoji
+      pkgs.ocr-a
       pkgs.public-sans # Sans-serif
       pkgs.source-code-pro
       pkgs.source-sans
