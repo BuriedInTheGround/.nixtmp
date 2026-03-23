@@ -11,6 +11,11 @@ if [[ -d "$pictures" && -d "$pictures/wallpapers" && -d "$pictures/wallpapers/$N
     fi
 fi
 
+# If the wallpaper is a symbolic link, remove it.
+if [[ -h "$pictures/wallpaper.png" ]]; then
+    rm "$pictures/wallpaper.png"
+fi
+
 # If no wallpaper is selected and a themed wallpaper is available, select it.
 if [[ ! -e "$pictures/wallpaper.png" ]]; then
     if [[ -e "$pictures/wallpaper-$NIXOS_THEME.png" ]]; then
@@ -18,6 +23,8 @@ if [[ ! -e "$pictures/wallpaper.png" ]]; then
     fi
 fi
 
-# Apply the selected wallpaper.
-feh --no-fehbg --bg-fill "$pictures/wallpaper.png"
-betterlockscreen --update "$pictures/wallpaper.png" --fx dimblur
+# If a wallpaper exists, apply it.
+if [[ -e "$pictures/wallpaper.png" ]]; then
+    feh --no-fehbg --bg-fill "$pictures/wallpaper.png"
+    betterlockscreen --update "$pictures/wallpaper.png" --fx dimblur
+fi
