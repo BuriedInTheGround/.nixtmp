@@ -79,7 +79,7 @@
     enable = true;
     xkb = {
       layout = "us,it";
-      options = "terminate:ctrl_alt_bksp,eurosign:e,grp:alt_space_toggle";
+      options = "terminate:ctrl_alt_bksp,compose:ralt,eurosign:e,grp:alt_space_toggle";
       variant = "us";
     };
 
