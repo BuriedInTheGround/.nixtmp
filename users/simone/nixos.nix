@@ -86,7 +86,7 @@
       pkgs.ibm-plex
       pkgs.inter
       pkgs.jetbrains-mono
-      pkgs.libertine
+      pkgs.libertinus
       pkgs.libre-baskerville
       pkgs.libre-franklin
       pkgs.merriweather
@@ -100,6 +100,7 @@
       pkgs.source-code-pro
       pkgs.source-sans
       pkgs.source-serif
+      pkgs.stix-two
       pkgs.times-newer-roman # Serif
       pkgs.tt2020
       pkgs.twemoji-color-font
